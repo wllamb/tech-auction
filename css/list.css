@@ -1,0 +1,111 @@
+a
+{
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+h4
+{
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	color: #900000;
+	font-size: .75em;
+}
+
+h4 a
+{
+	-webkit-transition:all .2s ease;
+	transition:all .2s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+	
+	text-decoration: none;
+	color: #900000;
+	margin: 0 0 50 0;
+}
+
+h4 a:hover
+{
+	-webkit-transition:all .1s ease;
+	transition:all .1s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+	
+	color: #600000;
+}
+
+#listingImg
+{
+	width: 130;
+	float: left;
+	margin: 0 15 0 0;
+}
+
+#listing
+{
+	float: left;
+	width: 622;
+	margin: 0;
+}
+
+#listing label, #price
+{
+	width: 64;
+	padding: 0 15;
+	margin: 0;
+	float: left;
+	font-size: 1.75em;
+
+
+}
+
+#titleAuction
+{
+	width: 450;
+	padding: 0 15;
+	margin: 0;
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+
+}
+
+#listing p
+{
+	width: 622;
+	padding: 0 15;
+	margin: 0;
+	float: left;
+}
+
+#listing h4
+{
+	padding: 0 36;
+	margin: 10 0 0 0;
+	float: left;
+}
+
+hr
+{
+	width: 80%;
+	margin: 24 auto;
+	border-style: solid;
+	border-width: 1 0 0 0;
+	border-color: #eee;
+}
+.img-circle {
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+

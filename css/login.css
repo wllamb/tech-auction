@@ -1,0 +1,32 @@
+#content
+{
+	text-align: center;
+}
+
+.item
+{
+	//display: block;
+}
+
+.left
+{
+	width: 390;
+	float: left;
+	text-align: right;
+	height:32;
+	padding: 0 15 0 0;
+	//background-color: red;
+}
+
+.right
+{
+	margin: 0 0 0 0;
+	height: 32;
+	text-align: left;
+	//background-color: green;
+}
+
+input[type="text"], input[type="password"]
+{
+	color: #ddd;
+}

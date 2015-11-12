@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Tech Auctions</title>
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="../css/default.css">
+	<?php
+		require_once('dbconnect.php');
+	?>
+</head>
+<body>
+
+<div id="center" style="height: 100%;">
+	<div id="header">
+		<span id="image">
+			<a href="#">
+				<img src="../images/logo_64_white.png" height="64" width="450" display: inline />
+			</a>
+		</span>
+		<span id="menu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Shop</a>
+					<ul>
+						<li><a href="list.html">CPUs</a></li>
+						<li><a href="list.html">Cooling</a></li>
+						<li><a href="list.html">Motherboards</a></li>
+						<li><a href="list.html">RAM</a></li>
+						<li><a href="list.html">GPUs</a></li>
+						<li><a href="list.html">PSUs</a></li>
+						<li><a href="list.html">Cases</a></li>
+						<li><a href="list.html">HDDs</a></li>
+						<li><a href="list.html">SSds</a></li>
+						<li><a href="list.html">Monitors</a></li>
+						<li><a href="list.html">Keyboards</a></li>
+						<li><a href="list.html">Mice</a></li>
+					</ul>
+				</li>
+				<li><a href="sell.html">Sell</a></li>
+				<li><a href="account.html">Account</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</span>
+		<span id="search">
+			<input type="search" name="search" id = "searchIN"  value="Search: " onfocus="if(this.value == 'Search: ') {this.value=''}" onblur="if(this.value == ''){this.value ='Search: '}">
+		</span>
+	</div>
+	<div id="space"></div>
+
+	<div id="title">
+		<h3>Featured Items</h3>
+	</div>
+	<div id="content">
+		<div id="imageStack">
+			<a href="item.html"><img src="../images/mobo.png" height="240" width="240" class="round" id="one" /></a>
+			<a href="item.html"><img src="../images/cpu.png" height="256" width="256" class="round" id="two" /></a>
+			<a href="item.html"><img src="../images/monitor.png" height="240" width="240" class="round" id="three" /></a>
+		</div>
+		<div id="imageP">
+			<p>Welcome to Tech Auctions where you can buy and sell computer-related techology. Please take a moment to sign in or create an account to buy and sell, or feel free to search around as a guest.</p>
+		</div>
+		<div id="void"></div>
+	</div>
+	<center><a href="http://www.freedomain.co.nr/" target="_blank" title="Free Domain Name" rel="nofollow"><img src="http://cmrsa.imdrv.net/328/9.gif" width="88" height="31" border="0" alt="Free Domain Name" /></a></center>
+
+</div>
+</body>
+</html>

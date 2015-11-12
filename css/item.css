@@ -1,0 +1,53 @@
+h1, h4
+{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #900000;
+}
+
+h4
+{
+	font-size: .75em;
+}
+
+h4 a
+{
+	text-decoration: none;
+	color: #900000;
+	margin: 0;
+}
+
+h4 a:hover
+{
+	color: #600000;
+}
+
+#listingImg
+{
+	width: 258;
+	float: left;
+	margin: 5 0 0 0;
+}
+
+#listing
+{
+	float: left;
+	width: 622;
+	margin: 5 15;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
