@@ -1,20 +1,20 @@
 <?php
 
-require_once('dbconnect.php');
-require_once ('../user_login/index.php');
+require_once 'dbconnect.php';
+require_once '../user_login/index.php';
 
 // unset if after it display the error.
-$_SESSION["e_msg"] = "";
+$_SESSION['e_msg'] = '';
 
-		if ($_SESSION["logged_in"] == true) {
-		  $logoutText = "Logout";
-		  $dynamicURL = LOGOUT_URL;
-		  $userid = $_SESSION["user_id"];
-		} else {
-			header("location: ./login.php");
-			$dynamicURL = "login.php";
-			$logoutText = "Login";
-		}
+        if ($_SESSION['logged_in'] == true) {
+            $logoutText = 'Logout';
+            $dynamicURL = LOGOUT_URL;
+            $userid = $_SESSION['user_id'];
+        } else {
+            header('location: ./login.php');
+            $dynamicURL = 'login.php';
+            $logoutText = 'Login';
+        }
 
 ?>
 <html>
@@ -70,22 +70,30 @@ $_SESSION["e_msg"] = "";
 		<h3>Account Summary</h3>
 	</div>
 	<div id="content">
-  <?php if ($_SESSION["new_user"] == "yes") { ?>
-    <h3 style="text-align:center">Thank you <?php echo $_SESSION["name"] ?>, for registering with us!</h3><br>
+  <?php if ($_SESSION['new_user'] == 'yes') {
+    ?>
+    <h3 style="text-align:center">Thank you <?php echo $_SESSION['name'] ?>, for registering with us!</h3><br>
 	<div id="listingImg">
-	<img class="img-circle" src="<?php echo $_SESSION["picture"]?>" height="200" width="200"></img>
+	<img class="img-circle" src="<?php echo $_SESSION['picture']?>" height="200" width="200"></img>
 	</div>
 	<span id="listing">
-	<h3 style="text-align:left">Your display name is: <?php echo rtrim($_SESSION["email"], "@gmail.com"); ?></h3>
-	<h3 style="text-align:left">The email address on file is: <?php echo $_SESSION["email"]; ?></h3>
-  <?php } else { ?>
+	<h3 style="text-align:left">Your display name is: <?php echo rtrim($_SESSION['email'], '@gmail.com');
+    ?></h3>
+	<h3 style="text-align:left">The email address on file is: <?php echo $_SESSION['email'];
+    ?></h3>
+  <?php
+} else {
+    ?>
 	<div id="listingImg">
-	<img class="img-circle" src="<?php echo $_SESSION["picture"]?>" height="200" width="200"></img>
+	<img class="img-circle" src="<?php echo $_SESSION['picture']?>" height="200" width="200"></img>
 	</div>
 	<span id="listing">
-	<h3 style="text-align:left">Your display name is: <?php echo rtrim($_SESSION["email"], "@gmail.com"); ?></h3>
-	<h3 style="text-align:left">The email address on file is: <?php echo $_SESSION["email"]; ?></h3>
-	<?php } ?>
+	<h3 style="text-align:left">Your display name is: <?php echo rtrim($_SESSION['email'], '@gmail.com');
+    ?></h3>
+	<h3 style="text-align:left">The email address on file is: <?php echo $_SESSION['email'];
+    ?></h3>
+	<?php
+} ?>
 	</span>
 	<div id="void"></div>
 	</div>
@@ -95,42 +103,41 @@ $_SESSION["e_msg"] = "";
 	</div>
 		<div id="content">
 	<?php
-			$result = $conn->query("SELECT * FROM bids WHERE bidderid = ".$userid."");
-			if ($result->num_rows > 0) {
-				// output data of each row
-				$itemPosition = 0;
-				while($row = $result->fetch_assoc()) {
-				if($row["auctionid"] == $itemPosition)
-				{
-					//we do nothing
-				} else {
-					$itemPosition = $row["auctionid"];
-					$resultTwo = $conn->query("SELECT * FROM itemlist WHERE id = ".$row["auctionid"]."");
-					if ($resultTwo->num_rows > 0) {
-						while($rowTwo = $resultTwo->fetch_assoc()) {
-						echo '
+            $result = $conn->query('SELECT * FROM bids WHERE bidderid = '.$userid.'');
+            if ($result->num_rows > 0) {
+                // output data of each row
+                $itemPosition = 0;
+                while ($row = $result->fetch_assoc()) {
+                    if ($row['auctionid'] == $itemPosition) {
+                        //we do nothing
+                    } else {
+                        $itemPosition = $row['auctionid'];
+                        $resultTwo = $conn->query('SELECT * FROM itemlist WHERE id = '.$row['auctionid'].'');
+                        if ($resultTwo->num_rows > 0) {
+                            while ($rowTwo = $resultTwo->fetch_assoc()) {
+                                echo '
 							<div id="listingImg">
-							<a href="item.php?id='.$rowTwo["id"].'"><img src="../userimages/'.$rowTwo["img"].'" height="128" width="128" class="round" /></a>
+							<a href="item.php?id='.$rowTwo['id'].'"><img src="../userimages/'.$rowTwo['img'].'" height="128" width="128" class="round" /></a>
 							</div>
 							<span id="listing">
-								<a href="item.php?id='.$rowTwo["id"].'" id="titleAuction">'.$rowTwo["title"].'</a>
-								<a href="item.php?id='.$rowTwo["id"].'" id="price">$'.$rowTwo["price"].'</a>
-								<h4><a href="#">Seller: '.$rowTwo["ownername"].'</a></h4>
-								<a href="item.php?id='.$rowTwo["id"].'"><p>'.$rowTwo["description"].'</p></a>
+								<a href="item.php?id='.$rowTwo['id'].'" id="titleAuction">'.$rowTwo['title'].'</a>
+								<a href="item.php?id='.$rowTwo['id'].'" id="price">$'.$rowTwo['price'].'</a>
+								<h4><a href="#">Seller: '.$rowTwo['ownername'].'</a></h4>
+								<a href="item.php?id='.$rowTwo['id'].'"><p>'.$rowTwo['description'].'</p></a>
 							</span>
 							<div id="void"></div>
 							<hr />';
-						}
-					} else {
-						echo "<center>Sorry no items were found in your search!</center>";
-					}
-				}
-			}
-		} else {
-			echo "<center>Sorry no items were found in your search!</center>";
-		}
+                            }
+                        } else {
+                            echo '<center>Sorry no items were found in your search!</center>';
+                        }
+                    }
+                }
+            } else {
+                echo '<center>Sorry no items were found in your search!</center>';
+            }
 
-	?>
+    ?>
 		<div id="void"></div>
 		</div>
 			<div id="title">
@@ -138,29 +145,29 @@ $_SESSION["e_msg"] = "";
 	</div>
 		<div id="content">
 	<?php
-			$resultThree = $conn->query("SELECT * FROM itemlist WHERE ownerid = ".$userid."");
-			if ($resultThree->num_rows > 0) {
-			// output data of each row
-			while($row = $resultThree->fetch_assoc()) {
-				echo '
+            $resultThree = $conn->query('SELECT * FROM itemlist WHERE ownerid = '.$userid.'');
+            if ($resultThree->num_rows > 0) {
+                // output data of each row
+            while ($row = $resultThree->fetch_assoc()) {
+                echo '
 					<div id="listingImg">
-					<a href="item.php?id='.$row["id"].'"><img src="../userimages/'.$row["img"].'" height="128" width="128" class="round" /></a>
+					<a href="item.php?id='.$row['id'].'"><img src="../userimages/'.$row['img'].'" height="128" width="128" class="round" /></a>
 					</div>
 					<span id="listing">
-						<a href="item.php?id='.$row["id"].'" id="titleAuction">'.$row["title"].'</a>
-						<a href="item.php?id='.$row["id"].'" id="price">$'.$row["price"].'</a>
-						<h4><a href="#">Seller: '.$row["ownername"].'</a></h4>
-						<a href="item.php?id='.$row["id"].'"><p>'.$row["description"].'</p></a>
+						<a href="item.php?id='.$row['id'].'" id="titleAuction">'.$row['title'].'</a>
+						<a href="item.php?id='.$row['id'].'" id="price">$'.$row['price'].'</a>
+						<h4><a href="#">Seller: '.$row['ownername'].'</a></h4>
+						<a href="item.php?id='.$row['id'].'"><p>'.$row['description'].'</p></a>
 					</span>
 					<div id="void"></div>
 					<hr />
 				';
-			}
-		} else {
-			echo "<center>Sorry you currently aren't selling any items.</center>";
-		}
+            }
+            } else {
+                echo "<center>Sorry you currently aren't selling any items.</center>";
+            }
 
-	?>
+    ?>
 		<div id="void"></div>
 		</div>
 

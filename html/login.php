@@ -1,5 +1,5 @@
 <?php
-require_once ('../user_login/index.php');
+require_once '../user_login/index.php';
 ?>
 
 <html>

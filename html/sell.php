@@ -1,19 +1,18 @@
 <?php
-require_once ('../user_login/index.php');
-
+require_once '../user_login/index.php';
 
 // unset if after it display the error.
-$_SESSION["e_msg"] = "";
+$_SESSION['e_msg'] = '';
 
-		if ($_SESSION["logged_in"] == true) {
-			$logoutText = "Logout";
-			$dynamicURL = LOGOUT_URL;
-			$userid = $_SESSION["user_id"];
-		} else {
-			header("location: ./login.php");
-			$dynamicURL = "login.php";
-			$logoutText = "Login";
-		}
+        if ($_SESSION['logged_in'] == true) {
+            $logoutText = 'Logout';
+            $dynamicURL = LOGOUT_URL;
+            $userid = $_SESSION['user_id'];
+        } else {
+            header('location: ./login.php');
+            $dynamicURL = 'login.php';
+            $logoutText = 'Login';
+        }
 ?>
 <html>
 

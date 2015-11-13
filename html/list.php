@@ -1,63 +1,61 @@
 <k
 <?php
-	require_once('dbconnect.php');
-	require_once ('cronjob.php');
-	require_once ('../user_login/index.php');
-
+    require_once 'dbconnect.php';
+    require_once 'cronjob.php';
+    require_once '../user_login/index.php';
 
 // unset if after it display the error.
-$_SESSION["e_msg"] = "";
+$_SESSION['e_msg'] = '';
 
-		if ($_SESSION["logged_in"] == true) {
-			$logoutText = "Logout";
-			$dynamicURL = LOGOUT_URL;
-		} else {
-			$dynamicURL = "login.php";
-			$logoutText = "Login";
-		}
+        if ($_SESSION['logged_in'] == true) {
+            $logoutText = 'Logout';
+            $dynamicURL = LOGOUT_URL;
+        } else {
+            $dynamicURL = 'login.php';
+            $logoutText = 'Login';
+        }
 
-
-$cat = $_GET["cat"];
+$cat = $_GET['cat'];
 
 switch ($cat) {
-    case "0":
+    case '0':
         $cat = "CPU's";
         break;
-    case "1":
-        $cat = "Cooling";
+    case '1':
+        $cat = 'Cooling';
         break;
-    case "2":
-        $cat = "Motherboards";
+    case '2':
+        $cat = 'Motherboards';
         break;
-	case "3":
-        $cat = "RAM";
+    case '3':
+        $cat = 'RAM';
         break;
-	case "4":
-        $cat = "GPUs";
+    case '4':
+        $cat = 'GPUs';
         break;
-	case "5":
-        $cat = "PSUs";
+    case '5':
+        $cat = 'PSUs';
         break;
-	case "6":
-        $cat = "Cases";
+    case '6':
+        $cat = 'Cases';
         break;
-	case "7":
-        $cat = "HDDs";
+    case '7':
+        $cat = 'HDDs';
         break;
-	case "8":
-        $cat = "SSds";
+    case '8':
+        $cat = 'SSds';
         break;
-	case "9":
-        $cat = "Monitors";
+    case '9':
+        $cat = 'Monitors';
         break;
-	case "10":
-        $cat = "Keyboards";
+    case '10':
+        $cat = 'Keyboards';
         break;
-	case "11":
-        $cat = "Mice";
+    case '11':
+        $cat = 'Mice';
         break;
     default:
-        echo "Error";
+        echo 'Error';
 }
 ?>
 <head>
@@ -111,30 +109,30 @@ switch ($cat) {
 	</div>
 	<div id="content">
 	<?php
-			//$sql = "SELECT id, category, title, img, price, length, description FROM itemlist WHERE category = ";
-			$result = $conn->query('SELECT * FROM itemlist WHERE category = '.$_GET["cat"].' AND hasended = 0');
-			if ($result->num_rows > 0) {
-			// output data of each row
-			while($row = $result->fetch_assoc()) {
-				echo '
+            //$sql = "SELECT id, category, title, img, price, length, description FROM itemlist WHERE category = ";
+            $result = $conn->query('SELECT * FROM itemlist WHERE category = '.$_GET['cat'].' AND hasended = 0');
+            if ($result->num_rows > 0) {
+                // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo '
 					<div id="listingImg">
-					<a href="item.php?id='.$row["id"].'"><img src="../userimages/'.$row["img"].'" height="128" width="128" class="round" /></a>
+					<a href="item.php?id='.$row['id'].'"><img src="../userimages/'.$row['img'].'" height="128" width="128" class="round" /></a>
 					</div>
 					<span id="listing">
-						<a href="item.php?id='.$row["id"].'" id="titleAuction">'.$row["title"].'</a>
-						<a href="item.php?id='.$row["id"].'" id="price">$'.$row["price"].'</a>
-						<h4><a href="#">Seller: '.$row["ownername"].'</a></h4>
-						<a href="item.php?id='.$row["id"].'"><p>'.$row["description"].'</p></a>
+						<a href="item.php?id='.$row['id'].'" id="titleAuction">'.$row['title'].'</a>
+						<a href="item.php?id='.$row['id'].'" id="price">$'.$row['price'].'</a>
+						<h4><a href="#">Seller: '.$row['ownername'].'</a></h4>
+						<a href="item.php?id='.$row['id'].'"><p>'.$row['description'].'</p></a>
 					</span>
 					<div id="void"></div>
 					<hr />
 				';
-			}
-		} else {
-			echo "<center>Sorry no items were found in your search!</center>";
-		}
+            }
+            } else {
+                echo '<center>Sorry no items were found in your search!</center>';
+            }
 
-	?>
+    ?>
 	</div>
 	<div id="void"></div>
 </div>
