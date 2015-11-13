@@ -79,8 +79,7 @@ $_SESSION['e_msg'] = '';
 	<img class="img-circle" src="<?php echo $_SESSION['picture']?>" height="200" width="200"></img>
 	</div>
 	<span id="listing">
-	<h3 style="text-align:left">Your display name is: <?php echo rtrim($_SESSION['email'], '@gmail.com');
-    ?></h3>
+	<h3 style="text-align:left">Your display name is: <?php echo rtrim($_SESSION['email'], '@gmail.com');?></h3>
 	<h3 style="text-align:left">The email address on file is: <?php echo $_SESSION['email'];
     ?></h3>
   <?php

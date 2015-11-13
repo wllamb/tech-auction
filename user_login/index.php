@@ -8,15 +8,15 @@ define("LOGOUT_URL", "https://www.google.com/accounts/Logout?continue=https://ap
 
 //Insert your cient ID and secret
 //You can get it from : https://console.developers.google.com/
-$client_id = '';
-$client_secret = '';
-$redirect_uri = 'http://androntechnologies.com/techauction/html/account.php';
+$client_id = '421785643835-1te41gear9hb2f36c64spt0t5pl009k5.apps.googleusercontent.com';
+$client_secret = 'ivx4T5sNSEy6OuzobCQlT6Ym';
+$redirect_uri = 'http://localhost/techauction/tech-auction/html/account.php';
 
 define('DB_DRIVER', 'mysql');
 define('DB_SERVER', 'localhost');
 define('DB_SERVER_USERNAME', 'root');
 define('DB_SERVER_PASSWORD', '');
-define('DB_DATABASE', 'techauction');*/
+define('DB_DATABASE', 'techauction');
 
 $dboptions = array(
     PDO::ATTR_PERSISTENT => FALSE,
