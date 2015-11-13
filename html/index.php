@@ -56,8 +56,10 @@ $_SESSION['e_msg'] = '';
 			</ul>
 		</span>
 		<span id="search">
-			<input type="search" name="search" id = "searchIN"  value="Search: " onfocus="if(this.value == 'Search: ') {this.value=''}" onblur="if(this.value == ''){this.value ='Search: '}">
-		</span>
+      <form  method="post" action="search.php?go"  id="searchform">
+			<input type="search" name="name" id = "searchIN"  value="Search: " onfocus="if(this.value == 'Search: ') {this.value=''}" onblur="if(this.value == ''){this.value ='Search: '}">
+      </form>
+    </span>
 	</div>
 	<div id="space"></div>
 
@@ -65,10 +67,37 @@ $_SESSION['e_msg'] = '';
 		<h3>Featured Items</h3>
 	</div>
 	<div id="content">
-		<div id="imageStack">
-			<a href="item.html"><img src="../images/mobo.png" height="240" width="240" class="round" id="one" /></a>
-			<a href="item.html"><img src="../images/cpu.png" height="256" width="256" class="round" id="two" /></a>
-			<a href="item.html"><img src="../images/monitor.png" height="240" width="240" class="round" id="three" /></a>
+    <div id="imageStack">
+    <?php
+    $sql = "SELECT * FROM itemlist WHERE hasended=0 ORDER BY RAND() LIMIT 3";
+    $result = $conn->query($sql);
+    //-create  while loop and loop through result set
+        $i = 1;
+        $imgOne = "";
+        $imgTwo = "";
+        $imgThree = "";
+        $linkOne;
+        $linkTwo;
+        $linkThree;
+        while ($row = $result->fetch_assoc()) {
+          if($i == 1) {
+            $imgOne = "../userimages/".$row['img'];
+            $linkOne = $row['id'];
+          } elseif ($i == 2) {
+            $imgTwo = "../userimages/".$row['img'];
+            $linkTwo = $row['id'];
+          } elseif ($i == 3) {
+            $imgThree = "../userimages/".$row['img'];
+            $linkThree = $row['id'];
+          } else {
+
+          }
+          $i++;
+        }
+    ?>
+			<a href="item.php?id=<?php echo $linkOne; ?>"><img src="<?php echo $imgOne; ?>" height="240" width="240" class="round" id="one" /></a>
+			<a href="item.php?id=<?php echo $linkTwo; ?>"><img src="<?php echo $imgTwo; ?>" height="256" width="256" class="round" id="two" /></a>
+			<a href="item.php?id=<?php echo $linkThree; ?>"><img src="<?php echo $imgThree; ?>" height="240" width="240" class="round" id="three" /></a>
 		</div>
 		<div id="imageP">
 			<p>Welcome to Tech Auctions where you can buy and sell computer-related techology. Please take a moment to sign in or create an account to buy and sell, or feel free to search around as a guest.</p>

@@ -1,8 +1,7 @@
-<k
 <?php
-    require_once 'dbconnect.php';
-    require_once 'cronjob.php';
-    require_once '../user_login/index.php';
+require_once 'dbconnect.php';
+require_once 'cronjob.php';
+require_once '../user_login/index.php';
 
 // unset if after it display the error.
 $_SESSION['e_msg'] = '';
@@ -14,49 +13,6 @@ $_SESSION['e_msg'] = '';
             $dynamicURL = 'login.php';
             $logoutText = 'Login';
         }
-
-$cat = $_GET['cat'];
-
-switch ($cat) {
-    case '0':
-        $cat = "CPU's";
-        break;
-    case '1':
-        $cat = 'Cooling';
-        break;
-    case '2':
-        $cat = 'Motherboards';
-        break;
-    case '3':
-        $cat = 'RAM';
-        break;
-    case '4':
-        $cat = 'GPUs';
-        break;
-    case '5':
-        $cat = 'PSUs';
-        break;
-    case '6':
-        $cat = 'Cases';
-        break;
-    case '7':
-        $cat = 'HDDs';
-        break;
-    case '8':
-        $cat = 'SSds';
-        break;
-    case '9':
-        $cat = 'Monitors';
-        break;
-    case '10':
-        $cat = 'Keyboards';
-        break;
-    case '11':
-        $cat = 'Mice';
-        break;
-    default:
-        echo 'Error';
-}
 ?>
 <head>
 	<title>Tech Auctions</title>
@@ -98,7 +54,7 @@ switch ($cat) {
 				<li><a href="<?php echo $dynamicURL; ?>"><?php echo $logoutText;?></a></li>
 			</ul>
 		</span>
-    <span id="search">
+		<span id="search">
       <form  method="post" action="search.php?go"  id="searchform">
 			     <input type="search" name="name" id = "searchIN"  value="Search: " onfocus="if(this.value == 'Search: ') {this.value=''}" onblur="if(this.value == ''){this.value ='Search: '}">
       </form>
@@ -107,33 +63,41 @@ switch ($cat) {
 	<div id="space"></div>
 
 	<div id="title">
-		<h3><?php echo $cat; ?></h3>
+		<h3>Search Results</h3>
 	</div>
 	<div id="content">
 	<?php
-            //$sql = "SELECT id, category, title, img, price, length, description FROM itemlist WHERE category = ";
-            $result = $conn->query('SELECT * FROM itemlist WHERE category = '.$_GET['cat'].' AND hasended = 0');
-            if ($result->num_rows > 0) {
-                // output data of each row
-            while ($row = $result->fetch_assoc()) {
-                echo '
-					<div id="listingImg">
-					<a href="item.php?id='.$row['id'].'"><img src="../userimages/'.$row['img'].'" height="128" width="128" class="round" /></a>
-					</div>
-					<span id="listing">
-						<a href="item.php?id='.$row['id'].'" id="titleAuction">'.$row['title'].'</a>
-						<a href="item.php?id='.$row['id'].'" id="price">$'.$row['price'].'</a>
-						<h4><a href="#">Seller: '.$row['ownername'].'</a></h4>
-						<a href="item.php?id='.$row['id'].'"><p>'.$row['description'].'</p></a>
-					</span>
-					<div id="void"></div>
-					<hr />
-				';
+            if (isset($_GET['go'])) {
+                if (preg_match('/^[  a-zA-Z0-9]+/', $_POST['name'])) {
+                    $name = $_POST['name'];
+                          //-query  the database table
+                          $sql = "SELECT * FROM itemlist WHERE hasended=0 AND title LIKE '%".$name."%' OR description LIKE '%".$name."%'";
+                          //-run  the query against the mysql query function
+                          $result = $conn->query($sql);
+                          //-create  while loop and loop through result set
+                          if ($result->num_rows > 0) {
+                              while ($rowTwo = $result->fetch_assoc()) {
+                                  echo '
+                                  <div id="listingImg">
+                                  <a href="item.php?id='.$rowTwo['id'].'"><img src="../userimages/'.$rowTwo['img'].'" height="128" width="128" class="round" /></a>
+                                  </div>
+                                  <span id="listing">
+                                    <a href="item.php?id='.$rowTwo['id'].'" id="titleAuction">'.$rowTwo['title'].'</a>
+                                    <a href="item.php?id='.$rowTwo['id'].'" id="price">$'.$rowTwo['price'].'</a>
+                                    <h4><a href="#">Seller: '.$rowTwo['ownername'].'</a></h4>
+                                    <a href="item.php?id='.$rowTwo['id'].'"><p>'.$rowTwo['description'].'</p></a>
+                                  </span>
+                                  <div id="void"></div>
+                                  <hr />
+                                  ';
+                              }
+                          } else {
+                              echo '<center>Sorry no items were found in your search!</center>';
+                          }
+                } else {
+                    echo '<center>Sorry no items were found in your search!</center>';
+                }
             }
-            } else {
-                echo '<center>Sorry no items were found in your search!</center>';
-            }
-
     ?>
 	</div>
 	<div id="void"></div>

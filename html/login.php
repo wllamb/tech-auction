@@ -44,8 +44,10 @@ require_once '../user_login/index.php';
 			</ul>
 		</span>
 		<span id="search">
-			<input type="search" name="search" id = "searchIN"  value="Search: " onfocus="if(this.value == 'Search: ') {this.value=''}" onblur="if(this.value == ''){this.value ='Search: '}">
-		</span>
+      <form  method="post" action="search.php?go"  id="searchform">
+			     <input type="search" name="name" id = "searchIN"  value="Search: " onfocus="if(this.value == 'Search: ') {this.value=''}" onblur="if(this.value == ''){this.value ='Search: '}">
+      </form>
+    </span>
 	</div>
 	<div id="space"></div>
 

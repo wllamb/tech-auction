@@ -56,9 +56,11 @@ $_SESSION['e_msg'] = '';
 				<li><a href="<?php echo $dynamicURL; ?>"><?php echo $logoutText;?></a></li>
 			</ul>
 		</span>
-		<span id="search">
-			<input type="search" name="search" id = "searchIN"  value="Search: " onfocus="if(this.value == 'Search: ') {this.value=''}" onblur="if(this.value == ''){this.value ='Search: '}">
-		</span>
+    <span id="search">
+      <form  method="post" action="search.php?go"  id="searchform">
+			     <input type="search" name="name" id = "searchIN"  value="Search: " onfocus="if(this.value == 'Search: ') {this.value=''}" onblur="if(this.value == ''){this.value ='Search: '}">
+      </form>
+    </span>
 	</div>
 	<div id="space"></div>
 

@@ -19,7 +19,7 @@
     //
     /*************************************************/
 
-    if (($item['price'] < $bidamt) && ($item['hasended'] == 0)) {
+    if (($item['price'] < $bidamt) && ($item['hasended'] == 0) && ($_SESSION['logged_in'] == true)) {
         $sql = "UPDATE itemlist SET price='".$bidamt."', bidderid='".$bidderID."', bidnum='".$bidIncrement."', biddername='".$bidderName."' WHERE id=".$auctionID;
         if ($conn->query($sql) === true) {
             echo 'Record updated successfully';
