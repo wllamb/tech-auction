@@ -35,7 +35,7 @@ if ($_SESSION['logged_in'] == true) {
 
 <body>
 
-<div id="center">
+<div id="center" style="height: 100%;">
 	<div id="header">
 		<div id="headCenter">
 			<span id="image">
@@ -80,35 +80,42 @@ if ($_SESSION['logged_in'] == true) {
 		<h3>Featured Items</h3>
 	</div>
 	<div class="content">
-	<ul class="bxslider">
-	<?php
-	$sql = "SELECT * FROM itemlist WHERE hasended=0 ORDER BY RAND() LIMIT 3";
-	$result = $conn->query($sql);
-	while ($row = $result->fetch_assoc()) {
-		echo '
-		<li>
-		<span class="flit">
-			<span class="featuredImg">
-				<img src="../userimages/'.$row['img'].'" height="240" width="240" class="round winning" />
-				<span class="slideWin" id="s1" onclick="window.location = \'#\';">
-					<h4 class="condition">Highest Bidder</h4>
-					<a href="#rm"><h4 class="rm">Remove</h4></a>
-				</span>
-			</span>
-			<span class="featured">
-				<h1>'.$row['title'].'</h1>
-				<p>'.$row['description'].'</p>
-			</span>
-		</span>
-		</li>';
-	}
-	?>
+		<div id="sliderOfLove">
+			<ul class="bxslider">
+				<?php
+				$sql = "SELECT * FROM itemlist WHERE hasended=0 ORDER BY RAND() LIMIT 3";
+				$result = $conn->query($sql);
+				while ($row = $result->fetch_assoc()) {
+					echo '
+					<li>
+					<span class="flit">
+						<span class="featuredImg">
+							<img src="../userimages/'.$row['img'].'" height="240" width="240" class="round winning" />
+							<span class="slideWin" id="s1" onclick="window.location = \'#\';">
+								<h4 class="condition">Highest Bidder</h4>
+								<a href="#rm"><h4 class="rm">Remove</h4></a>
+							</span>
+						</span>
+						<span class="featured">
+							<h1>'.$row['title'].'</h1>
+							<p>'.$row['description'].'</p>
+						</span>
+					</span>
+					</li>';
+				}
+				?>
 			</ul>
+
 			<script>
 				$(document).ready(function(){
-	  		$('.bxslider').bxSlider();
+		  		$('.bxslider').bxSlider(
+						{
+							auto: true,
+						}
+					);
 				});
 			</script>
+		</div>
 
         <!--div id="imageStack">
             <a href="#"><img src="../images/mobo.png" height="240" width="240" class="round winning" id="left" /></a>
@@ -164,7 +171,7 @@ if ($_SESSION['logged_in'] == true) {
 			<a width="50" height="50"></a>
 		</span> -->
 
-		<div id="void"></div>
+		<div id="void" style="margin-bottom:10;"></div>
 	</div>
 
 
