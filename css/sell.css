@@ -31,3 +31,8 @@
 	height: 128;
 	//background-color: blue;
 }
+
+select, input[type="text"], input[type="file"], textarea, input[type="password"]
+{
+	width: 250;
+}

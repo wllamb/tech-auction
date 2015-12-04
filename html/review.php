@@ -8,13 +8,17 @@
 	//add in security
 	//logged in user must be winner, hasended = 1
 ?>
+<html>
 <head>
 	<title>Tech Auctions</title>
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="../css/default.css">
-	<link rel="stylesheet" type="text/css" href="../css/review.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
 </head>
+
+    <!-- ALSO CHANGED; DEFAULT.CSS, INDEX.CSS -->
+
 <body>
 
 <div id="center">
@@ -28,7 +32,7 @@
 			<span id="menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="#">Shop</a>
+					<li><a href="shop.php">Shop</a>
 						<ul>
 							<li><a href="list.php?cat=0">CPUs</a></li>
 							<li><a href="list.php?cat=1">Cooling</a></li>
@@ -46,7 +50,7 @@
 					</li>
 					<li><a href="sell.php">Sell</a></li>
 					<li><a href="account.php">Account</a></li>
-					<li><a href="../user_login/logout.php">Logout</a></li>
+					<li><a href="<?php echo $dynamicURL; ?>"><?php echo $logoutText;?></a></li>
 				</ul>
 			</span>
 		</div>
