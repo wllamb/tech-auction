@@ -79,6 +79,7 @@ if ($_SESSION['logged_in'] == true) {
 	<div class="title">
 		<h3>Featured Items</h3>
 	</div>
+
 	<div class="content">
 		<div id="sliderOfLove">
 			<ul class="bxslider">
@@ -116,6 +117,7 @@ if ($_SESSION['logged_in'] == true) {
 				});
 			</script>
 		</div>
+
 
         <!--div id="imageStack">
             <a href="#"><img src="../images/mobo.png" height="240" width="240" class="round winning" id="left" /></a>

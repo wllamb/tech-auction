@@ -1,6 +1,15 @@
 <html>
 <?php
 	require_once 'dbconnect.php';
+	require_once '../user_login/index.php';
+	if ($_SESSION['logged_in'] == true) {
+			$logoutText = 'Logout';
+			$dynamicURL = LOGOUT_URL;
+			$userid = $_SESSION['user_id'];
+	} else {
+			$dynamicURL = 'login.php';
+			$logoutText = 'Login';
+	}
 	$auctionID = $_GET['id'];
 	$result = $conn->query('SELECT * FROM itemlist WHERE id = '.$auctionID);
 	$row = $result->fetch_assoc();
@@ -14,7 +23,7 @@
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="../css/default.css">
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/review.css">
 </head>
 
     <!-- ALSO CHANGED; DEFAULT.CSS, INDEX.CSS -->
@@ -73,7 +82,7 @@
 				</label>
 			</div>
 			<div class="right"><!-- &#9733, &#9734 -->
-				<p id="rating">
+				<span id="rating">
 					<input type="radio" name="stars" value="1" id="radio1" onclick="starSetter(1)" required/>
 					<label for="radio1"><span id="one"></span></label>
 					<input type="radio" name="stars" value="2" id="radio2" onclick="starSetter(2)" required/>
@@ -84,7 +93,7 @@
 					<label for="radio4"><span id="four"></span></label>
 					<input type="radio" name="stars" value="5" id="radio5" onclick="starSetter(5)" required/>
 					<label for="radio5"><span id="five"></span></label>
-				</p>
+				</span>
 			</div>
 		</div>
 
