@@ -1,4 +1,4 @@
-h1, h4
+h1
 {
 	margin: 0;
 	padding: 0;
@@ -8,6 +8,10 @@ h1, h4
 
 h4
 {
+	margin: 0;
+	padding: 5 0;
+	text-align: left;
+	color: #900000;
 	font-size: .75em;
 }
 
@@ -23,6 +27,14 @@ h4 a:hover
 	color: #600000;
 }
 
+.condition, .rm
+{
+	color: #fff;
+    text-align: left;
+    margin: 5 10;
+    font-size: .75em;
+}
+
 #listingImg
 {
 	width: 258;
@@ -30,16 +42,163 @@ h4 a:hover
 	margin: 5 0 0 0;
 }
 
+.mini
+{
+	-webkit-transition:opacity .2s ease;
+	transition:opacity .2s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+	
+	opacity: 1;
+	
+	width: 60;
+	height: 60;
+	margin: 5 1 5 0;
+	padding: 0;
+	border-width: 0;
+	cursor: pointer;
+}
+
+.mini:hover
+{
+	-webkit-transition:opacity .1s ease;
+	transition:opacity .1s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+	
+	opacity: .7;
+}
+
 #listing
 {
 	float: left;
-	width: 622;
+	width: 612;
 	margin: 5 15;
+	text-align: left;
 }
 
 
 
 
+
+.slideWin, .slideLose, .slideList
+{
+    -webkit-transition:opacity .2s ease;
+	transition:opacity .2s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+	
+	position: relative;
+    top: -258;
+	float: left;
+	width: 258;
+	height: 258;
+    margin: 0 0 -258 0;
+    border-radius: 5px;
+	opacity: 0;
+	text-decoration: none;
+    color: rgba(255, 255, 255, 0);
+}
+
+.slideWin:hover, .slideLose:hover, .slideList:hover
+{
+    -webkit-transition:all .1s ease;
+	transition:all .1s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+    
+    cursor:pointer;
+	
+	opacity: 1;
+    
+    color: #fff;
+}
+
+
+.slideWin
+{
+    /*float: left;
+    width: 258;
+    margin: 0;
+    
+    position: relative;
+    top: -258;
+    
+    border-radius: 5px;*/
+	
+	background: -webkit-linear-gradient(rgba(0,144,0,.3) 10%, rgba(0,144,0,.3) 10%, rgba(0,144,0,.1) 10%, rgba(0,144,0,.1) 90%, rgba(0,144,0,.1) 90%, rgba(0,144,0,.3) 90%, rgba(0,144,0,.3) 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0,144,0,.3) 10%, rgba(0,144,0,.3) 10%, rgba(0,144,0,.1) 10%, rgba(0,144,0,.1) 90%, rgba(0,144,0,.1) 90%, rgba(0,144,0,.3) 90%, rgba(0,144,0,.3) 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0,144,0,.3) 10%, rgba(0,144,0,.3) 10%, rgba(0,144,0,.1) 10%, rgba(0,144,0,.1) 90%, rgba(0,144,0,.1) 90%, rgba(0,144,0,.3) 90%, rgba(0,144,0,.3) 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0,144,0,.3) 10%, rgba(0,144,0,.3) 10%, rgba(0,144,0,.1) 10%, rgba(0,144,0,.1) 90%, rgba(0,144,0,.1) 90%, rgba(0,144,0,.3) 90%, rgba(0,144,0,.3) 100%); /* Standard syntax (must be last) */
+	
+	/*opacity: 0;
+    
+    height: 258;
+    margin-bottom: -258;
+    
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0);*/
+}
+
+.slideLose
+{
+	background: -webkit-linear-gradient(rgba(144,0,0,.3) 10%, rgba(144,0,0,.3) 10%, rgba(144,0,0,.1) 10%, rgba(144,0,0,.1) 90%, rgba(144,0,0,.1) 90%, rgba(144,0,0,.3) 90%, rgba(144,0,0,.3) 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(144,0,0,.3) 10%, rgba(144,0,0,.3) 10%, rgba(144,0,0,.1) 10%, rgba(144,0,0,.1) 90%, rgba(144,0,0,.1) 90%, rgba(144,0,0,.3) 90%, rgba(144,0,0,.3) 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(144,0,0,.3) 10%, rgba(144,0,0,.3) 10%, rgba(144,0,0,.1) 10%, rgba(144,0,0,.1) 90%, rgba(144,0,0,.1) 90%, rgba(144,0,0,.3) 90%, rgba(144,0,0,.3) 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(144,0,0,.3) 10%, rgba(144,0,0,.3) 10%, rgba(144,0,0,.1) 10%, rgba(144,0,0,.1) 90%, rgba(144,0,0,.1) 90%, rgba(144,0,0,.3) 90%, rgba(144,0,0,.3) 100%); /* Standard syntax (must be last) */
+}
+
+.slideList
+{
+	background: -webkit-linear-gradient(rgba(0,0,144,.3) 10%, rgba(0,0,144,.3) 10%, rgba(0,0,144,.1) 10%, rgba(0,0,144,.1) 90%, rgba(0,0,144,.1) 90%, rgba(0,0,144,.3) 90%, rgba(0,0,144,.3) 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0,0,144,.3) 10%, rgba(0,0,144,.3) 10%, rgba(0,0,144,.1) 10%, rgba(0,0,144,.1) 90%, rgba(0,0,144,.1) 90%, rgba(0,0,144,.3) 90%, rgba(0,0,144,.3) 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0,0,144,.3) 10%, rgba(0,0,144,.3) 10%, rgba(0,0,144,.1) 10%, rgba(0,0,144,.1) 90%, rgba(0,0,144,.1) 90%, rgba(0,0,144,.3) 90%, rgba(0,0,144,.3) 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0,0,144,.3) 10%, rgba(0,0,144,.3) 10%, rgba(0,0,144,.1) 10%, rgba(0,0,144,.1) 90%, rgba(0,0,144,.1) 90%, rgba(0,0,144,.3) 90%, rgba(0,0,144,.3) 100%); /* Standard syntax (must be last) */
+}
+
+.condition
+{
+    text-align: left;
+    margin: 0;
+    padding: 5;
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.rm
+{
+    -webkit-transition:all .1s ease;
+	transition:all .1s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+    
+    text-align: right;
+    margin: 203 0 0 0;
+    padding: 5 5 6 5;
+    
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    /*background-color: aqua*/
+}
+
+.rm:hover
+{
+    -webkit-transition:all .1s ease;
+	transition:all .1s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+    
+    background-color: #900000;
+    color: rgba(255, 255, 255, 1);
+}
+
+a
+{
+    color: inherit;
+    text-decoration: none;
+}
 
 
 
