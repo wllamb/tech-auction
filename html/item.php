@@ -1,33 +1,3 @@
-<?php
-    require_once 'dbconnect.php';
-    require_once '../user_login/index.php';
-    require_once 'cronjob.php';
-
-        // unset if after it display the error.
-        $_SESSION['e_msg'] = '';
-
-        if ($_SESSION['logged_in'] == true) {
-            $logoutText = 'Logout';
-            $dynamicURL = LOGOUT_URL;
-        } else {
-            $dynamicURL = 'login.php';
-            $logoutText = 'Login';
-        }
-
-    $result = $conn->query('SELECT * FROM itemlist WHERE id = '.$_GET['id']);
-    $item = $result->fetch_assoc();
-
-    date_default_timezone_set('America/New_York');
-    $startDate = strtotime(''.$item['dateposted'].'');
-    $endDate = strtotime('+'.$item['length'].' days', "$startDate");
-    $year = date('Y', $endDate);
-    $month = (int) date('m', $endDate);
-    $day = date('d', $endDate);
-    $hour = date('h', $endDate);
-    $minute = date('i', $endDate);
-    $AMPM = date('a', $endDate);
-
-?>
 <head>
 	<title>Tech Auctions</title>
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
@@ -65,7 +35,7 @@
 				</li>
 				<li><a href="sell.php">Sell</a></li>
 				<li><a href="account.php">Account</a></li>
-				<li><a href="<?php echo $dynamicURL; ?>"><?php echo $logoutText;?></a></li>
+				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</span>
     <span id="search">
@@ -77,44 +47,24 @@
 	<div id="space"></div>
 	<div id="title">
 		<h3>Time Left:</h3>
-		<h3 id="cntdwn">
-		<script language="JavaScript">
-		TargetDate = "'<?php echo $month; ?>'/'<?php echo $day; ?>'/'<?php echo $year; ?>' <?php echo $hour.':'.$minute.' '.$AMPM?>";
-		CountActive = true;
-		CountStepper = -1;
-		LeadingZero = false;
-		DisplayFormat = "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds";
-		FinishMessage = "The auction has ended.";
-		</script>
-		<script language="JavaScript" src="./countdown.js"></script>
+		<h3>
+			time is here
 		</h3>
 	</div>
 	<div id="content">
-<?php
-            if ($_SESSION['logged_in'] == true) {
-                $loginButton = '<input type="submit" value="Place Bid" />';
-            } else {
-                $loginButton = '';
-            }
-            $result = $conn->query('SELECT * FROM itemlist WHERE id = '.$_GET['id']);
-            $item = $result->fetch_assoc();
-            echo '
-			<h1 style="text-align:left">'.$item['title'].'</h1>
-			<h4><a href src="#">Seller: '.$item['ownername'].'</a></h4>
+			<h1>This is an item</h1>
+			<h4><a href src="#">Seller: haerpaderp</a></h4>
 			<br>
 			<div id="listingImg">
-				<img src="../userimages/'.$item['img'].'" height="256" width="256" class="round" />
+				<img src="../images/cpu.png" height="256" width="256" class="round" />
 			</div>
 			<span id="listing">
 				<form id="bidPlace" action="placebid.php?id='.$_GET['id'].'" method="post">
 					<input type="text" name="bid" value="$'.$item['price'].'" />
 					'.$loginButton.'
 				</form>
-				<p>'.$item['description'].'</p>
+				<p>Lorem ipsum dolor sit amet. Lorem Ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
 			</span>
-
-			';//end php echo
-            ?>
 		<div id="void"></div>
 	</div>
 

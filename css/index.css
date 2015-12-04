@@ -1,0 +1,266 @@
+#imageStack
+{
+	width: 750;
+	margin: 0 auto;
+}
+
+#imageP
+{
+	width: 486;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#left
+{
+	//display: block;
+	position: relative;
+	top: -8px;
+	left: 136px;
+	z-index: 3;
+	width: 240;
+	height: 240;
+	box-shadow: 0px 2px 4px #222;
+
+	-webkit-transition:all 0.2s ease;
+	transition:all 0.2s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+
+	-webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+}
+
+#front
+{
+	//display: block;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	z-index: 5;
+	width: 256;
+	height: 256;
+	box-shadow: 0px 5px 15px #222;
+
+	-webkit-transition:all 0.2s ease;
+	transition:all 0.2s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+
+	-webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+}
+
+#right
+{
+	//display: block;
+	position: relative;
+	top: -8px;
+	left:  -136px;
+	z-index: 1;
+	width: 240;
+	height: 240;
+	box-shadow: 0px 2px 4px #222;
+
+	-webkit-transition:all 0.2s ease;
+	transition:all 0.2s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+
+	-webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+}
+
+#left:hover, #front:hover, #right:hover
+{
+	z-index: 9;
+	-webkit-transition:all 0.1s ease;
+	transition:all 0.1s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+
+	-webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        
+        box-shadow: 0px 7px 20px #222;
+}
+
+.navL, .navR
+{
+	margin: 0;
+	padding: 0;
+}
+
+.navL a
+{
+	height: 50;
+	width: 50;
+	padding: 0;
+	margin: 100 15 100 0;
+	background-image: url('../images/left.svg');
+	border-radius: 50%;
+		
+	float: left;
+}
+
+.navR a
+{
+	height: 50;
+	width: 50;
+	padding: 0;
+	margin: 100 0 100 15;
+	background-image: url('../images/right.svg');
+	border-radius: 50%;
+	
+	float: left;
+}
+
+.navL:hover a
+{
+	background-image: url('../images/left_hover.svg');
+	cursor:pointer;
+}
+
+.navR:hover a
+{
+	background-image: url('../images/right_hover.svg');
+	cursor:pointer;
+}
+
+.flit
+{
+    /*background-color: #0000ff;*/
+    width: 760;
+    height: 250;
+    padding: 5;
+
+    float:left;
+}
+
+.featuredImg
+{
+	width: 258;
+	float: left;
+	margin: 5 0 0 0;
+}
+
+.featured
+{
+	float: left;
+	width: 500;
+	/*background-color: red;*/
+}
+
+.slideWin, .slideLose, .slideList
+{
+    -webkit-transition:opacity .2s ease;
+	transition:opacity .2s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+	
+	position: relative;
+    top: -242;
+	float: left;
+	width: 242;
+	height: 242;
+    margin: 0 0 -242 0;
+    border-radius: 5px;
+	opacity: 0;
+	text-decoration: none;
+    color: rgba(255, 255, 255, 0);
+}
+
+.slideWin:hover, .slideLose:hover, .slideList:hover
+{
+    -webkit-transition:all .1s ease;
+	transition:all .1s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+    
+    cursor:pointer;
+	
+	opacity: 1;
+    
+    color: #fff;
+}
+
+.slideWin
+{
+	background: -webkit-linear-gradient(rgba(0,144,0,.3) 11%, rgba(0,144,0,.3) 11%, rgba(0,144,0,.1) 11%, rgba(0,144,0,.1) 89%, rgba(0,144,0,.1) 89%, rgba(0,144,0,.3) 89%, rgba(0,144,0,.3) 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0,144,0,.3) 11%, rgba(0,144,0,.3) 11%, rgba(0,144,0,.1) 11%, rgba(0,144,0,.1) 89%, rgba(0,144,0,.1) 89%, rgba(0,144,0,.3) 89%, rgba(0,144,0,.3) 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0,144,0,.3) 11%, rgba(0,144,0,.3) 11%, rgba(0,144,0,.1) 11%, rgba(0,144,0,.1) 89%, rgba(0,144,0,.1) 89%, rgba(0,144,0,.3) 89%, rgba(0,144,0,.3) 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0,144,0,.3) 11%, rgba(0,144,0,.3) 11%, rgba(0,144,0,.1) 11%, rgba(0,144,0,.1) 89%, rgba(0,144,0,.1) 89%, rgba(0,144,0,.3) 89%, rgba(0,144,0,.3) 100%); /* Standard syntax (must be last) */
+}
+
+.slideLose
+{
+	background: -webkit-linear-gradient(rgba(144,0,0,.3) 11%, rgba(144,0,0,.3) 11%, rgba(144,0,0,.1) 11%, rgba(144,0,0,.1) 89%, rgba(144,0,0,.1) 89%, rgba(144,0,0,.3) 89%, rgba(144,0,0,.3) 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(144,0,0,.3) 11%, rgba(144,0,0,.3) 11%, rgba(144,0,0,.1) 11%, rgba(144,0,0,.1) 89%, rgba(144,0,0,.1) 89%, rgba(144,0,0,.3) 89%, rgba(144,0,0,.3) 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(144,0,0,.3) 11%, rgba(144,0,0,.3) 11%, rgba(144,0,0,.1) 11%, rgba(144,0,0,.1) 89%, rgba(144,0,0,.1) 89%, rgba(144,0,0,.3) 89%, rgba(144,0,0,.3) 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(144,0,0,.3) 11%, rgba(144,0,0,.3) 11%, rgba(144,0,0,.1) 11%, rgba(144,0,0,.1) 89%, rgba(144,0,0,.1) 89%, rgba(144,0,0,.3) 89%, rgba(144,0,0,.3) 100%); /* Standard syntax (must be last) */
+}
+
+.slideList
+{
+	background: -webkit-linear-gradient(rgba(0,0,144,.3) 11%, rgba(0,0,144,.3) 11%, rgba(0,0,144,.1) 11%, rgba(0,0,144,.1) 89%, rgba(0,0,144,.1) 89%, rgba(0,0,144,.3) 89%, rgba(0,0,144,.3) 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0,0,144,.3) 11%, rgba(0,0,144,.3) 11%, rgba(0,0,144,.1) 11%, rgba(0,0,144,.1) 89%, rgba(0,0,144,.1) 89%, rgba(0,0,144,.3) 89%, rgba(0,0,144,.3) 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0,0,144,.3) 11%, rgba(0,0,144,.3) 11%, rgba(0,0,144,.1) 11%, rgba(0,0,144,.1) 89%, rgba(0,0,144,.1) 89%, rgba(0,0,144,.3) 89%, rgba(0,0,144,.3) 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0,0,144,.3) 11%, rgba(0,0,144,.3) 11%, rgba(0,0,144,.1) 11%, rgba(0,0,144,.1) 89%, rgba(0,0,144,.1) 89%, rgba(0,0,144,.3) 89%, rgba(0,0,144,.3) 100%); /* Standard syntax (must be last) */
+}
+
+h4
+{
+    font-size: .75em;
+}
+
+.condition
+{
+    text-align: left;
+    margin: 0;
+    padding: 5;
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.rm:hover
+{
+	-webkit-transition:all .1s ease;
+	transition:all .1s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+    
+    background-color: #900000;
+}
+
+.rm
+{
+    -webkit-transition:background-color .2s ease;
+	transition:background-color .2s ease;
+	transition-delay: 0;
+	transition-timing-function: linear;
+    
+    text-align: right;
+    margin: 188 0 0 0;
+    padding: 5;
+    
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    /*background-color: rgba(144, 0, 0, 0);*/
+}
+
+a
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+
+

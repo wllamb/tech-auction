@@ -6,11 +6,15 @@ require_once ('libraries/Google/autoload.php');
 define("SITE_URL", "http://androntechnologies.com/techauction/user_login/");
 define("LOGOUT_URL", "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=". urlencode(SITE_URL."logout.php"));
 
+date_default_timezone_set('America/New_York');
+$d = strtotime('now');
+$date = date('Y-m-d', $d);
+
 //Insert your cient ID and secret
 //You can get it from : https://console.developers.google.com/
 $client_id = '421785643835-1te41gear9hb2f36c64spt0t5pl009k5.apps.googleusercontent.com';
 $client_secret = 'ivx4T5sNSEy6OuzobCQlT6Ym';
-$redirect_uri = 'http://localhost/techauction/tech-auction/html/account.php';
+$redirect_uri = 'http://localhost/ta-new/html/account.php';
 
 define('DB_DRIVER', 'mysql');
 define('DB_SERVER', 'localhost');
@@ -107,12 +111,13 @@ if (isset($authUrl)){
     }
 	else
 	{
-   		$sql = "INSERT INTO `google_users` (`google_id`, `google_name`, `google_email`, `google_picture_link`) VALUES " . "( :user_id, :name, :email, :picture)";
+   		$sql = "INSERT INTO `google_users` (`google_id`, `google_name`, `google_email`, `google_picture_link`,`joindate`) VALUES " . "( :user_id, :name, :email, :picture, :date)";
 			$stmt = $DB->prepare($sql);
 			$stmt->bindValue(":user_id", $user->id);
 			$stmt->bindValue(":name", $user->name);
 			$stmt->bindValue(":email", $user->email);
 			$stmt->bindValue(":picture", $user->picture);
+      $stmt->bindValue(":date", $date);
 			$stmt->execute();
 			$_SESSION["new_user"] = "yes";
 			echo $mysqli->error;

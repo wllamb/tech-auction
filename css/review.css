@@ -1,0 +1,108 @@
+@import "compass/css3";
+
+
+
+
+
+.content
+{
+	text-align: center;
+}
+
+.left
+{
+	width: 390;
+	float: left;
+	text-align: right;
+	height:32;
+	padding: 0 15 0 0;
+}
+
+.right
+{
+	margin: 0 0 0 0;
+	height: 32;
+	text-align: left;
+}
+
+#tall
+{
+	height: 128;
+}
+
+#rating
+{
+	float: left;
+	width: 113;
+
+	border-style: solid;
+	border-width: 0 1;
+	border-color: #900000;
+	background-color: #eee;
+	text-align: left;
+	text-decoration: none;
+	color: #000;
+	padding: 5 15;
+	margin: 0 0 15 0;
+}
+
+#rating span, #rating label
+{
+	color: #000;
+	text-decoration:none;
+	margin: -2;
+	padding: 2;
+}
+
+
+
+
+
+
+
+input[type="radio"]
+{
+    display:none;
+}
+input[type="radio"] + label
+{
+    font-family:Arial, sans-serif;
+    font-size:14px;
+
+		background-image: url('../images/5p_uc.svg');
+		background-size: 19px 19px;
+		background-repeat: no-repeat;
+}
+input[type="radio"] + label span
+{
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+}
+
+input[type="radio"] + label span
+{
+		background-image: url('../images/5p_uc.svg');
+		background-size: 19px 19px;
+		background-repeat: no-repeat;
+}
+
+input[type="radio"]:checked + label span
+{
+		background-image: url('../images/5p_c.svg');
+		background-size: 19px 19px;
+		background-repeat: no-repeat;
+}
+
+input[type="radio"] + label span, input[type="radio"]:checked + label span
+{
+  -webkit-transition:background-color 0.1s linear;
+  -o-transition:background-color 0.1s linear;
+  -moz-transition:background-color 0.1s linear;
+  transition:background-color 0.1s linear;
+}
