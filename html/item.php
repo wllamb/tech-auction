@@ -77,14 +77,13 @@ $AMPM = date('a', $endDate);
 	<div id="space"></div>
 
 	<div class="title">
-		<h3>Time Left:</h3>
 		<h3 id="cntdwn">
 		<script language="JavaScript">
 		TargetDate = "'<?php echo $month; ?>'/'<?php echo $day; ?>'/'<?php echo $year; ?>' <?php echo $hour.':'.$minute.' '.$AMPM?>";
 		CountActive = true;
 		CountStepper = -1;
 		LeadingZero = false;
-		DisplayFormat = "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds";
+		DisplayFormat = "Time Left: %%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds";
 		FinishMessage = "The auction has ended.";
 		</script>
 		<script language="JavaScript" src="./countdown.js"></script>

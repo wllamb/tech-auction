@@ -182,8 +182,8 @@ $_SESSION['e_msg'] = '';
     $(document).ready(function(){
       $('.bxslider').bxSlider(
         {
-          minSlides: 1,
-          maxSlides: 3,
+          minSlides: 0,
+          maxSlides: 10,
           slideWidth: 202,
           slideMargin: 10
         }
