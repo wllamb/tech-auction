@@ -3,7 +3,7 @@ ob_start();
 session_start(); //session start
 require_once ('libraries/Google/autoload.php');
 
-define("SITE_URL", "http://androntechnologies.com/techauction/user_login/");
+define("SITE_URL", "http://localhost/ta-new/user_login/");
 define("LOGOUT_URL", "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=". urlencode(SITE_URL."logout.php"));
 
 date_default_timezone_set('America/New_York');

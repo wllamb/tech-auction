@@ -92,14 +92,14 @@ if ($_SESSION['logged_in'] == true) {
 					<span class="flit">
 						<span class="featuredImg">
 							<img src="../userimages/'.$row['img'].'" height="240" width="240" class="round winning" />
-							<span class="slideWin" id="s1" onclick="window.location = \'#\';">
+							<span class="slideWin" id="s1" onclick="window.location = \'item.php?id='.$row['id'].'\';">
 								<h4 class="condition">Highest Bidder</h4>
 								<a href="#rm"><h4 class="rm">Remove</h4></a>
 							</span>
 						</span>
 						<span class="featured">
-							<h1>'.$row['title'].'</h1>
-							<p>'.$row['description'].'</p>
+							<h1><a href="item.php?id='.$row['id'].'">'.$row['title'].'</a></h1>
+							<p><a href="item.php?id='.$row['id'].'">'.$row['description'].'</a></p>
 						</span>
 					</span>
 					</li>';

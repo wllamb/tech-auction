@@ -32,11 +32,11 @@ $_SESSION['e_msg'] = '';
 	<link rel="stylesheet" type="text/css" href="../css/default.css">
 	<link rel="stylesheet" type="text/css" href="../css/account.css">
   <!-- jQuery library (served from Google) -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <!-- bxSlider Javascript file -->
-<script src="../js/jquery.bxslider.min.js"></script>
+  <script src="../js/jquery.bxslider.min.js"></script>
   <!-- bxSlider CSS file -->
-<link href="../js/jquery.bxslider.css" rel="stylesheet" />
+  <link href="../js/jquery.bxslider.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -82,11 +82,11 @@ $_SESSION['e_msg'] = '';
 	<div id="space"></div>
 
 	<div class="title">
-		<h3>Welcome <?php echo $_SESSION['name'] ?></h3>
+		<h3>Welcome back <?php echo $_SESSION['name'] ?></h3>
 	</div>
 	<div class="content">
         <div id="listingImg">
-           <img class="round" src="../images/cpu.png" height="200" width="200" />
+           <img class="round" src="<?php echo $user->picture ?>" height="200" width="200" />
         </div>
         <!--span id="listing">
             <p>Your display name is: herpaderp</p>
