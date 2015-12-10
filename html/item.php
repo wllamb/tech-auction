@@ -35,7 +35,7 @@ $AMPM = date('a', $endDate);
 
 <body>
 
-<div id="center">
+<div id="center" style="height:100%;">
 	<div id="header">
 		<div id="headCenter">
 			<span id="image">
@@ -123,26 +123,4 @@ $AMPM = date('a', $endDate);
 </div>
 
 </body>
-<!--
-<h1>This is an item</h1>
-<br>
-<div id="listingImg">
-	<img src="../images/black.png" height="256" width="256" class="round winning" id="jsBitches"/>
-	<span class="slideWin" id="s1" onclick="window.location = '#';">
-		<h4 class="condition">Winning</h4>
-		<a href="#rm"><h4 class="rm">Remove</h4></a>
-	</span>
-	<img src="../images/black.png" height="60" width="60" class="round mini" onclick="document.getElementById('jsBitches').src = '../images/black.png';" style="margin-left:2;"/>
-	<img src="../images/cpu.png" height="60" width="60" class="round mini" onclick="document.getElementById('jsBitches').src = '../images/cpu.png';" />
-	<img src="../images/mobo.png" height="60" width="60" class="round mini" onclick="document.getElementById('jsBitches').src = '../images/mobo.png';" />
-	<img src="../images/monitor.png" height="60" width="60" class="round mini" onclick="document.getElementById('jsBitches').src = '../images/monitor.png';" />
-</div>
-<span id="listing">
-	<h4><a href src="#">Seller: herpaderp</a></h4>
-	<form id="bidPlace" action="placebid.php?id='.$_GET['id'].'" method="post">
-		<input type="text" name="bid" value="$'.$item['price'].'" />
-		Bid
-	</form>
-	<p>Lorem ipsum dolor sit amet. Lorem Ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
-</span>-->
 </html>
