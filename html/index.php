@@ -2,6 +2,7 @@
 
 require_once 'dbconnect.php';
 require_once '../user_login/index.php';
+require_once 'cronjob.php';
 
 if ($_SESSION['logged_in'] == true) {
 		$logoutText = 'Logout';

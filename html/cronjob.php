@@ -12,6 +12,7 @@ require_once '../user_login/index.php';
             $startDate = strtotime(''.$row['dateposted'].'');//set start date
             $endDate = strtotime('+'.$row['length'].' days', "$startDate"); //set end date based on auction length value
             $timeNow = strtotime('now'); //sets up time now
+            $item = $row['title'];
             if ($timeNow >= $endDate) {
                 //auction should end if this condition is met
                 $sql = 'UPDATE itemlist SET hasended=1 WHERE id='.$row['id']; //sets auction to end, now we send emails..
@@ -19,11 +20,11 @@ require_once '../user_login/index.php';
                 $winner_email = $row['biddername'].'@gmail.com';
                 $owner_email = $row['ownername'].'@gmail.com';
                 $email = 'TechAuctions@techauction.co.nr';
-                $subject_winner = 'You won the item!';
+                $subject_winner = 'You won the TechAuction item '.$item.'!';
                 $subject_owner = 'Your TechAcution item sold!';
-                $subject_owner_nosell = "Your TechAcution item didn't sell";
-                $comment = 'Congratulations!';
-                $comment_nosell = "Sorry! Your item didn't sell. Please re-list it!";
+                $subject_owner_nosell = "Your TechAcution item didn't sell.";
+                $comment = 'Congratulations! On winning '.$item.'. Please visit the account page to leave a review.';
+                $comment_nosell = "Sorry! Your item '.$item.' didn't sell. Please re-list it!";
 
                   //send emails
                     if ($row['bidnum'] == 0) {
