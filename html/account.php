@@ -93,56 +93,74 @@ $_SESSION['e_msg'] = '';
             <p>The email address on file is: herpaderp@gmail.com</p>
         </span-->
     <?php
-        $sql = "SELECT * FROM reviews ORDER BY RAND() LIMIT 1";
-        $reviewdata = $conn->query($sql);
+        $reviews = true;
+        $reviewdata = $conn->query('SELECT * FROM reviews WHERE seller='.$userid.' ORDER BY RAND() LIMIT 1');
         $reviewoutput = $reviewdata->fetch_assoc();
 
         $user_review_data = $conn->query('SELECT * FROM google_users WHERE google_id = '.$userid)->fetch_assoc();
         $user_rating = $user_review_data['rating'];
         $max_ratings = $user_review_data['max_ratings'];
-
-        $stars = (int)(($user_rating/$max_ratings)*100);
-
-        if(($stars >= 1) || ($stars < 20))
+        if($max_ratings != 0)
         {
-          echo '&#9733 &#9734 &#9734 &#9734 &#9734';
-        }
-        else if(($stars >= 20) || ($stars < 40))
-        {
-          echo '&#9733 &#9733 &#9734 &#9734 &#9734';
-        }
-        else if(($stars >= 40) || ($stars < 60))
-        {
-          echo '&#9733 &#9733 &#9733 &#9734 &#9734';
-        }
-        else if(($stars >= 60) || ($stars < 80))
-        {
-          echo '&#9733 &#9733 &#9733 &#9733 &#9734';
+          $stars = (int)(($user_rating/$max_ratings)*100);
         }
         else
         {
-          echo '&#9733 &#9733 &#9733 &#9733 &#9733';
+          $stars = 0;
+          $reviews = false;
         }
 
-
+        if($stars === 0)
+        {
+          $startext = '&#9734 &#9734 &#9734 &#9734 &#9734';
+        }
+        else if(($stars >= 1) && ($stars < 20))
+        {
+          $startext = '&#9733 &#9734 &#9734 &#9734 &#9734';
+        }
+        else if(($stars >= 20) && ($stars < 40))
+        {
+          $startext = '&#9733 &#9733 &#9734 &#9734 &#9734';
+        }
+        else if(($stars >= 40) && ($stars < 60))
+        {
+          $startext = '&#9733 &#9733 &#9733 &#9734 &#9734';
+        }
+        else if(($stars >= 60) && ($stars < 80))
+        {
+          $startext = '&#9733 &#9733 &#9733 &#9733 &#9734';
+        }
+        else
+        {
+          $startext = '&#9733 &#9733 &#9733 &#9733 &#9733';
+        }
 
     ?>
+
 		<p id="rating" title="<?php echo $user_rating.'/'.$max_ratings;?>">
-			&#9733 &#9733 &#9733 &#9733 &#9734
+        <?php echo $startext; ?>
 		</p>
 		<p id="joined">Member since: <?php echo $date ?></p><!-- http://www.alt-codes.net/star_alt_code.php -->
 
 		<!--p class="review">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus eleifend orci eu pretium. Vestibulum efficitur vitae metus id lobortis. Aliquam vel fringilla nibh. Praesent ac tincidunt sapien. In a metus dolor. Vestibulum eu dictum metus. Praesent malesuada dui magna, eu iaculis velit lacinia et. Donec finibus ante id nisl placerat, vitae ultrices nunc convallis. Vivamus at risus mi. In in diam quis ipsum consectetur semper vitae quis risus.
 		</p-->
+    <?php
+    if($reviews) {
+      echo '
+      <p class="review">
+        '.$reviewoutput['review_text'].'
+      </p>
 
-    <p class="review">
-      <?php echo $reviewoutput['review_text'];  ?>
-    </p>
+      <p class="reviewer">
+        <a href="user.php?id=">by: '.$reviewoutput['reviewer'].'</a>
+      </p>
+      ';
+    }
+    ?>
 
-    <p class="reviewer">
-      <a href="user.php?id="><?php echo $reviewoutput['reviewer'];  ?></a>
-    </p>
+
+
 
 		<!--p class="reviewer">
 			<a href="#"> - ponlyloverx67</a>
