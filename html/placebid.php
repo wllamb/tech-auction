@@ -1,19 +1,19 @@
 <?php
     require_once '../user_login/index.php';
     require_once 'dbconnect.php';
-    $canPlaceBid = true;
+    $canBid = true;
     $auctionID = $_GET['id']; // get the auctions id value from database
     $bidamt = trim($_POST['bid'], '$'); // bid amount placed by the user
     $bidderID = $_SESSION['user_id']; //current bidders user id pulled from session data
     $bidderName = rtrim($_SESSION['email'], '@gmail.com'); //bidder name taken from the email address with $email.com removed
     $result = $conn->query('SELECT * FROM itemlist WHERE id = '.$_GET['id']); // find the item in the database
     $item = $result->fetch_assoc();
-    $ownerID = $_SESSION["user_id"];
+    $ownerID = $item["bidderid"];
     //lets handle the case of user bidding on an item he/she listed
     if($bidderID == $ownerID)
     {
       $canBid = false; //user cant bid
-    } else {
+    } else if($bidderID != $ownerID) {
       $canBid = true; // user can bid
     }
     if ($item['bidnum'] == 0) {

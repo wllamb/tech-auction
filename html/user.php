@@ -16,7 +16,7 @@ $_SESSION['e_msg'] = '';
 
         $result = $conn->query('SELECT * FROM google_users WHERE google_id = '.$userID)->fetch_assoc();
         $joindate = $result['joindate'];
-				$usersName = rtrim($result['google_name'], '@gmail.com');
+				$usersName = rtrim($result['google_email'], '@gmail.com');
 				$userPicture = $result['google_picture_link'];
         $d = strtotime($joindate);
         $date = date('m-d-Y', $d);
@@ -92,7 +92,7 @@ $_SESSION['e_msg'] = '';
 		        $reviews = true;
 		        $reviewdata = $conn->query('SELECT * FROM reviews WHERE seller='.$userID.' ORDER BY RAND() LIMIT 1');
 		        $reviewoutput = $reviewdata->fetch_assoc();
-
+						$reviewerID = $reviewoutput['reviewid'];
 		        $user_review_data = $conn->query('SELECT * FROM google_users WHERE google_id = '.$userID)->fetch_assoc();
 		        $user_rating = $user_review_data['rating'];
 		        $max_ratings = $user_review_data['max_ratings'];
@@ -149,7 +149,7 @@ $_SESSION['e_msg'] = '';
 		      </p>
 
 		      <p class="reviewer">
-		        <a href="user.php?id=">by: '.$reviewoutput['reviewer'].'</a>
+		        <a href="user.php?id='.$reviewerID.'">by: '.$reviewoutput['reviewer'].'</a>
 		      </p>
 		      ';
 		    }
@@ -163,7 +163,7 @@ $_SESSION['e_msg'] = '';
     </div>
 
 	<div class="title">
-        <h3>Other items by hatGuy</h3>
+        <h3><?php echo 'Other items by '.$usersName; ?></h3>
 	</div>
 	<script>
     $(document).ready(function(){

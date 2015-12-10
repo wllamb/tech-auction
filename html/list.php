@@ -129,7 +129,7 @@ switch ($cat) {
 					<span id="listing">
 						<a href="item.php?id='.$row['id'].'" id="titleAuction">'.$row['title'].'</a>
 						<a href="item.php?id='.$row['id'].'" id="price">$'.$row['price'].'</a>
-						<h4><a href="user.html">Seller: '.$row['ownername'].'</a></h4>
+						<h4><a href="user.php?id='.$row['ownerid'].'">Seller: '.$row['ownername'].'</a></h4>
 						<a href="item.php?id='.$row['id'].'"><p>'.$row['description'].'</p></a>
 					</span>
 					<div id="void"></div>

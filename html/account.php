@@ -96,7 +96,7 @@ $_SESSION['e_msg'] = '';
         $reviews = true;
         $reviewdata = $conn->query('SELECT * FROM reviews WHERE seller='.$userid.' ORDER BY RAND() LIMIT 1');
         $reviewoutput = $reviewdata->fetch_assoc();
-
+        $reviewerID = $reviewoutput['reviewid'];
         $user_review_data = $conn->query('SELECT * FROM google_users WHERE google_id = '.$userid)->fetch_assoc();
         $user_rating = $user_review_data['rating'];
         $max_ratings = $user_review_data['max_ratings'];
@@ -153,7 +153,7 @@ $_SESSION['e_msg'] = '';
       </p>
 
       <p class="reviewer">
-        <a href="user.php?id=">by: '.$reviewoutput['reviewer'].'</a>
+        <a href="user.php?id='.$reviewerID.'">by: '.$reviewoutput['reviewer'].'</a>
       </p>
       ';
     }
