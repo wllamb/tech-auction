@@ -23,7 +23,6 @@
     }
 
 
-
     if (($item['price'] < $bidamt) && ($item['hasended'] == 0) && ($_SESSION['logged_in'] == true) && ($canBid == true)) {
         $sql = "UPDATE itemlist SET price='".$bidamt."', bidderid='".$bidderID."', bidnum='".$bidIncrement."', biddername='".$bidderName."' WHERE id=".$auctionID;
         if ($conn->query($sql) === true) {
@@ -49,7 +48,7 @@
     } else {
         if ($item['hasended'] == 1) {
             echo 'The auction is over..';
-        } else {
-            echo "Error...bid wasn't high enough";
+        } else if($canBid == false) {
+            echo "Error...you can't bid on your own item..";
         }
     }
