@@ -198,6 +198,11 @@ $_SESSION['e_msg'] = '';
       <div id="sliderOfLove" style="width: 626; margin: 0 auto 5 auto;">
         <ul class="bxslider">
       <?php
+            
+            $slide = 'slideLose';
+            $class = 'losing';
+            $conditionText = 'Out Bid';
+            
             $result = $conn->query('SELECT * FROM bids WHERE bidderid = '.$userid.'');
             if ($result->num_rows > 0) {
                 // output data of each row
@@ -210,15 +215,29 @@ $_SESSION['e_msg'] = '';
                         $resultTwo = $conn->query('SELECT * FROM itemlist WHERE id = '.$row['auctionid'].'');
                         if ($resultTwo->num_rows >= 0) {
                             while ($rowTwo = $resultTwo->fetch_assoc()) {
+                            
+                            if($_SESSION['user_id'] == $rowTwo['bidderid'])
+                            {
+                                $slide = 'slideWin';
+                                $class = 'winning';
+                                $conditionText = 'Highest Bidder';
+                            }
+                            else
+                            {
+                                $slide = 'slideLose';
+                                $class = 'losing';
+                                $conditionText = 'Out Bid';
+                            }
+                            
                               echo '<li>
                                 <div class="boxen">
-                                  <img src="../userimages/'.$rowTwo['img'].'" height="200" width="200" class="round winning" id="one" />
+                                  <img src="../userimages/'.$rowTwo['img'].'" height="200" width="200" class="round '.$class.'" id="one" />
                                   <br />
-                                  <span class="slideWin" id="s1" onclick="confirmHandle('.$rowTwo['id'].', 0, 0)">
-                                    <h4 class="condition">Highest Bidder</h4>
+                                  <span class="'.$slide.'" id="s1" onclick="confirmHandle('.$rowTwo['id'].', 0, 0)">
+                                    <h4 class="condition">'.$conditionText.'</h4>
                                     <a><h4 class="rm">Remove</h4></a>
                                   </span>
-                                    <a onclick="confirmHandle('.$rowTwo['id'].', 1, 0)" onmouseover="document.getElementByClassName("slideWin").css("opacity", "1")"><h4>Remove</h4></a>
+                                    <a onclick="confirmHandle('.$rowTwo['id'].', 1, 0)"><h4>Remove</h4></a>
 
                                 </div>
                     					</li>';

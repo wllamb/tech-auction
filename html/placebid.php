@@ -8,7 +8,7 @@
     $bidderName = rtrim($_SESSION['email'], '@gmail.com'); //bidder name taken from the email address with $email.com removed
     $result = $conn->query('SELECT * FROM itemlist WHERE id = '.$_GET['id']); // find the item in the database
     $item = $result->fetch_assoc();
-    $ownerID = $item["bidderid"];
+    $ownerID = $item["ownerid"];
     //lets handle the case of user bidding on an item he/she listed
     if($bidderID == $ownerID)
     {
@@ -26,7 +26,8 @@
     if (($item['price'] < $bidamt) && ($item['hasended'] == 0) && ($_SESSION['logged_in'] == true) && ($canBid == true)) {
         $sql = "UPDATE itemlist SET price='".$bidamt."', bidderid='".$bidderID."', bidnum='".$bidIncrement."', biddername='".$bidderName."' WHERE id=".$auctionID;
         if ($conn->query($sql) === true) {
-            echo 'Record updated successfully';
+            $title = "Success!";
+            $message = "Bid posted succesfully!";
             echo '
 				<SCRIPT language="JavaScript">
 				<!--
@@ -47,8 +48,10 @@
         }
     } else {
         if ($item['hasended'] == 1) {
+            $title = "Error!";
             $message = 'The auction has ended';
         } else if($canBid == false) {
+            $title = "Error!";
             $message = 'You cannot bid on your own item.';
         }
     }
@@ -123,7 +126,7 @@ if ($_SESSION['logged_in'] == true) {
 	<div id="space"></div>
 
 	<div class="title">
-		<h3>Error</h3>
+		<h3><?php echo $title; ?></h3>
 	</div>
 	<div class="content">
 		<p><?php echo $message; ?></p>
