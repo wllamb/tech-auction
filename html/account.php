@@ -218,9 +218,11 @@ $_SESSION['e_msg'] = '';
                                   <img src="../userimages/'.$rowTwo['img'].'" height="200" width="200" class="round winning" id="one" />
 
                                   <br />
-                                  <span class="slideWin" id="s1" onclick="window.location = \'item.php?id='.$rowTwo['id'].'\';">
+                                  <!--span class="slideWin" id="s1" onclick="window.location = \'item.php?id='.$rowTwo['id'].'\';"-->
+                                  <span class="slideWin" id="s1" onclick="confirmHandle('.$rowTwo['id'].', 0)">
                                     <h4 class="condition">Highest Bidder</h4>
-                                    <a href="remove.php?id='.$rowTwo['id'].'"><h4 class="rm">Remove</h4></a>
+                                    <!--a href="remove.php?id='.$rowTwo['id'].'"><h4 class="rm">Remove</h4></a-->
+                                    <a onclick="confirmHandle('.$rowTwo['id'].', 1)"><h4 class="rm">Remove</h4></a>
                                   </span>
 
                                 </div>
@@ -239,6 +241,32 @@ $_SESSION['e_msg'] = '';
     ?>
   </ul>
 </div>
+
+  <script>
+    function confirmHandle(x, rm)
+    {
+      var urlRm = "remove.php?id=";
+      var url = "item.php?id=";
+
+      if(!rm)
+      {
+        window.location.replace(burp);
+      }
+      else
+      {
+        var r = confirm("Are you sure you want to remove this item?");
+        if (r == true)
+        {
+          window.location.replace(urlRm.concat(x));
+        }
+        else
+        {
+          
+        }
+      }
+
+    }
+  </script>
 
   <script>
     $(document).ready(function(){
@@ -304,11 +332,11 @@ $_SESSION['e_msg'] = '';
 
                             echo '<li>
                               <div class="boxen">
-                                <img src="../userimages/'.$row['img'].'" height="200" width="200" class="round winning" id="one" />
+                                <img src="../userimages/'.$row['img'].'" height="200" width="200" class="round listing" id="one" />
 
                                 <br />
-                                <span class="slideWin" id="s1" onclick="window.location = \'#\';">
-                                  <h4 class="condition">Highest Bidder</h4>
+                                <span class="slideList" id="s1" onclick="window.location = \'#\';">
+                                  <h4 class="condition">Listing</h4>
                                   <a href="#rm"><h4 class="rm">Remove</h4></a>
                                 </span>
 

@@ -17,7 +17,6 @@
 	//add in security
 	//logged in user must be winner, hasended = 1
 ?>
-<html>
 <head>
 	<title>Tech Auctions</title>
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
