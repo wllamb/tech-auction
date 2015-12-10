@@ -166,10 +166,10 @@ $_SESSION['e_msg'] = '';
     	</div>
 
       <div class="content">
-          <ul>
+          <ul class="reviewUL">
           ';
             while ($row = $result->fetch_assoc()) {
-              echo '<li><a href="review.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
+              echo '<li class="reviewList"><a href="review.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
             }
           echo '
           </ul>
@@ -194,11 +194,10 @@ $_SESSION['e_msg'] = '';
 
             $result = $conn->query('SELECT * FROM bids WHERE bidderid = '.$userid.'');
             if ($result->num_rows > 0) {
-                echo '<center>Sorry no items were found in your search!</center>';
                 $itemPosition = 0;
                 while ($row = $result->fetch_assoc()) {
                     if ($row['auctionid'] == $itemPosition) {
-                      //we do nothing
+                      echo 'Item not found.';
                     } else {
                         $itemPosition = $row['auctionid'];
                         $resultTwo = $conn->query('SELECT * FROM itemlist WHERE hasended=0 AND id = '.$row['auctionid'].' ');

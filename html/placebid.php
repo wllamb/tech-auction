@@ -3,7 +3,7 @@
     require_once 'dbconnect.php';
     $canBid = true;
     $auctionID = $_GET['id']; // get the auctions id value from database
-    $bidamt = trim($_POST['bid'], '$'); // bid amount placed by the user
+    $bidamt = (int)trim($_POST['bid'], '$'); // bid amount placed by the user
     $bidderID = $_SESSION['user_id']; //current bidders user id pulled from session data
     $bidderName = rtrim($_SESSION['email'], '@gmail.com'); //bidder name taken from the email address with $email.com removed
     $result = $conn->query('SELECT * FROM itemlist WHERE id = '.$_GET['id']); // find the item in the database
@@ -20,6 +20,15 @@
         $bidIncrement = 1; //this is the first bid on the item...
     } else {
         $bidIncrement = $item['bidnum'] + 1; //these are subsequent bids
+    }
+    $typeOfValue = gettype($bidamt);
+    if($bidamt > 0)
+    {
+      $canBid = true;
+    } else {
+      $title = 'Error';
+      $message = 'Invalid Bid';
+      $canBid = false;
     }
 
 
@@ -52,7 +61,7 @@
             $message = 'The auction has ended';
         } else if($canBid == false) {
             $title = "Error!";
-            $message = 'You cannot bid on your own item.';
+            $message = 'Invalid bid, please try again.';
         }
     }
 ?>
