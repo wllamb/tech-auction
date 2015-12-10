@@ -11,9 +11,9 @@ $actualOwnerID = $result['ownerid'];
 
 if($userLoggedInID == $actualOwnerID)
 {
-  $canDelete == true;
+  $canDelete = true;
 } else {
-  $canDelete == false;
+  $canDelete = false;
 }
 
 if($canDelete == true)  {

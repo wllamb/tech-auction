@@ -21,7 +21,7 @@ if ($_SESSION['logged_in'] == true) {
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="../css/default.css">
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/list.css">
 </head>
 
     <!-- ALSO CHANGED; DEFAULT.CSS, INDEX.CSS -->
@@ -69,10 +69,10 @@ if ($_SESSION['logged_in'] == true) {
 	</div>
 	<div id="space"></div>
 
-	<div id="title">
+	<div class="title">
 		<h3>Search Results</h3>
 	</div>
-	<div id="content">
+	<div class="content">
 	<?php
             if (isset($_GET['go'])) {
                 if (preg_match('/^[  a-zA-Z0-9]+/', $_POST['name'])) {
