@@ -24,7 +24,7 @@ if ($_SESSION['logged_in'] == true) {
 
 <body>
 
-<div id="center">
+<div id="center" style="height:100%;">
 	<div id="header">
 		<div id="headCenter">
 			<span id="image">

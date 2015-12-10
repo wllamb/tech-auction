@@ -28,7 +28,6 @@ if ($_SESSION['logged_in'] == true) {
 		<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="../css/default.css">
-	    <link rel="stylesheet" type="text/css" href="../css/index.css">
 	</head>
 
 	    <!-- ALSO CHANGED; DEFAULT.CSS, INDEX.CSS -->
@@ -77,8 +76,12 @@ if ($_SESSION['logged_in'] == true) {
 		<div id="space"></div>
 
 
-	<div id="content">
-	<h3>Your item was listed successfully! Redirecting you to the newly created item... </h3>
+    <div class="title">
+        <h3>Success!</h3>
+    </div>
+	<div class="content" style="text-align: center;">
+	<p>Your item was posted succesfully!</p>
+    <input type="button" value="Ok" onclick="window.location.href = 'item.php?id=<?php echo $_GET["id"];?>'"/>
 	</div>
 	<div id="void"></div>
 </div>
