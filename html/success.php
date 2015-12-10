@@ -17,22 +17,9 @@ if ($_SESSION['logged_in'] == true) {
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="../css/default.css">
-	<link rel="stylesheet" type="text/css" href="../css/list.css">
 	<meta http-equiv="Refresh" content="2; URL=../html/item.php?id=<?php echo $_GET["id"];?>">
 </head>
 <body>
-
-	<html>
-	<head>
-		<title>Tech Auctions</title>
-		<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="../css/default.css">
-	</head>
-
-	    <!-- ALSO CHANGED; DEFAULT.CSS, INDEX.CSS -->
-
-	<body>
 
 	<div id="center">
 		<div id="header">
