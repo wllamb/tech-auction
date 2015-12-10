@@ -109,7 +109,7 @@ $AMPM = date('a', $endDate);
 				</span-->
 			</div>
 			<span id="listing">
-				<h4><a href src="#">Seller: '.$item['ownername'].'</a></h4>
+				<h4><a href="user.php?id='.$item['ownerid'].'">Seller: '.$item['ownername'].'</a></h4>
 				<form id="bidPlace" action="placebid.php?id='.$_GET['id'].'" method="post">
 					<input type="text" name="bid" value="$'.($item['price'] + 1).'" />
 					'.$loginButton.'

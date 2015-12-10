@@ -182,21 +182,21 @@ $_SESSION['e_msg'] = '';
 			<div id="sliderOfLove"  style="width: 626; margin: 0 auto 5 auto;">
 	      <ul class="bxslider">
 	    <?php
-	      $resultThree = $conn->query('SELECT * FROM itemlist WHERE ownerid = '.$userid.'');
+	      $resultThree = $conn->query('SELECT * FROM itemlist WHERE ownerid = '.$userID.'');
 	      if ($resultThree->num_rows > 0) {
 	          // output data of each row
 	      while ($row = $resultThree->fetch_assoc()) {
 
 	                            echo '<li>
 	                              <div class="boxen">
-	                                <a href="#">
+	                                <a href="item.php?id='.$row['id'].'">
 																		<img src="../userimages/'.$row['img'].'" height="200" width="200" class="round" id="one" />
 																	</a>
 	                              </div>
 	                            </li>';
 	                          }
 	          } else {
-	                  echo '<center>Sorry no items were found in your search!</center>';
+	                  echo '<center>No items for sale!</center>';
 	          }
 	  ?>
 	</ul>
