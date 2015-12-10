@@ -216,12 +216,9 @@ $_SESSION['e_msg'] = '';
                               echo '<li>
                                 <div class="boxen">
                                   <img src="../userimages/'.$rowTwo['img'].'" height="200" width="200" class="round winning" id="one" />
-
                                   <br />
-                                  <!--span class="slideWin" id="s1" onclick="window.location = \'item.php?id='.$rowTwo['id'].'\';"-->
                                   <span class="slideWin" id="s1" onclick="confirmHandle('.$rowTwo['id'].', 0)">
                                     <h4 class="condition">Highest Bidder</h4>
-                                    <!--a href="remove.php?id='.$rowTwo['id'].'"><h4 class="rm">Remove</h4></a-->
                                     <a onclick="confirmHandle('.$rowTwo['id'].', 1)"><h4 class="rm">Remove</h4></a>
                                   </span>
 
@@ -250,14 +247,14 @@ $_SESSION['e_msg'] = '';
 
       if(!rm)
       {
-        window.location.replace(burp);
+        window.location.href(url.concat(x));
       }
       else
       {
         var r = confirm("Are you sure you want to remove this item?");
         if (r == true)
         {
-          window.location.replace(urlRm.concat(x));
+          window.location.href(urlRm.concat(x));
         }
         else
         {

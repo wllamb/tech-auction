@@ -84,70 +84,12 @@
     border-radius: 50%;
 }
 
-/*#listing
-{
-	float: left;
-	width: 622;
-	margin: 5 15;
-}*/
-
 .boxen
 {
 	width: 100%;
 	margin: 0 auto 0 auto;
 	padding: 0;
 }
-
-/*.navBox
-{
-	width: 751;
-	margin: 0 auto 0 auto;
-	padding: 0;
-}
-
-.navL, .navR
-{
-	margin: 0;
-	padding: 0;
-}
-
-.navL a
-{
-	border-radius: 50%;
-
-	height: 50;
-	width: 50;
-	padding: 0;
-	margin: 75 15 0 0;
-	background-image: url('../images/left.svg');
-
-	float: left;
-}
-
-.navR a
-{
-	border-radius: 50%;
-
-	height: 50;
-	width: 50;
-	padding: 0;
-	margin: -131 0 0 15;
-	background-image: url('../images/right.svg');
-
-	float: left;
-}
-
-.navL:hover a
-{
-	background-image: url('../images/left_hover.svg');
-	cursor:pointer;
-}
-
-.navR:hover a
-{
-	background-image: url('../images/right_hover.svg');
-	cursor:pointer;
-}*/
 
 .slideWin, .slideLose, .slideList
 {
@@ -160,7 +102,8 @@
     top: -208;
 	float: left;
 	width: 202;
-	height: 175;
+	height: 202;
+    padding-bottom: 0;
     margin: 6 0 -202 0;
     border-radius: 5px;
 	opacity: 0;
@@ -184,31 +127,67 @@
 
 .slideWin
 {
-	background: -webkit-linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%); /* Standard syntax (must be last) */
+	background: rgba(0,144,0,.5);
+    
+    /*background: -webkit-linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%);
+    background: -o-linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%);
+    background: -moz-linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%);
+    background: linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%);*/
 }
 
 .slideLose
 {
-	background: -webkit-linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%); /* Standard syntax (must be last) */
+	background: rgba(144,0,0,.5);
+    
+    /*background: -webkit-linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%);
+    background: -o-linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%);
+    background: -moz-linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%);
+    background: linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%);*/
 }
 
 .slideList
 {
-	background: -webkit-linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%); /* Standard syntax (must be last) */
+	background: rgba(0,0,144,.5);
+    
+    /*background: -webkit-linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%);
+    background: -o-linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%);
+    background: -moz-linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%);
+    background: linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%);*/
 }
 
 h4
 {
     font-size: .75em;
+}
+
+.slideWin .condition
+{
+    background: rgba(0,144,0,.3);
+}
+
+.slideLose .condition
+{
+    background: rgba(144,0,0,.3);
+}
+
+.slideList .condition
+{
+    background: rgba(0,0,144,.3);
+}
+
+.slideWin .rm
+{
+    background: rgba(0,144,0,.3);
+}
+
+.slideLose .rm
+{
+    background: rgba(144,0,0,.3);
+}
+
+.slideList .rm
+{
+    background: rgba(0,0,144,.3);
 }
 
 .condition
@@ -245,7 +224,7 @@ h4
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 
-    /*background-color: rgba(144, 0, 0, 0);*/
+    cursor: pointer;
 }
 
 a
