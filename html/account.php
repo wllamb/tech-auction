@@ -92,19 +92,61 @@ $_SESSION['e_msg'] = '';
             <p>Your display name is: herpaderp</p>
             <p>The email address on file is: herpaderp@gmail.com</p>
         </span-->
+    <?php
+        $sql = "SELECT * FROM reviews ORDER BY RAND() LIMIT 1";
+        $reviewdata = $conn->query($sql);
+        $reviewoutput = $reviewdata->fetch_assoc();
 
-		<p id="rating" title="17/20">
+        $user_review_data = $conn->query('SELECT * FROM google_users WHERE google_id = '.$userid)->fetch_assoc();
+        $user_rating = $user_review_data['rating'];
+        $max_ratings = $user_review_data['max_ratings'];
+
+        $stars = (int)(($user_rating/$max_ratings)*100);
+
+        if(($stars >= 1) || ($stars < 20))
+        {
+          echo '&#9733 &#9734 &#9734 &#9734 &#9734';
+        }
+        else if(($stars >= 20) || ($stars < 40))
+        {
+          echo '&#9733 &#9733 &#9734 &#9734 &#9734';
+        }
+        else if(($stars >= 40) || ($stars < 60))
+        {
+          echo '&#9733 &#9733 &#9733 &#9734 &#9734';
+        }
+        else if(($stars >= 60) || ($stars < 80))
+        {
+          echo '&#9733 &#9733 &#9733 &#9733 &#9734';
+        }
+        else
+        {
+          echo '&#9733 &#9733 &#9733 &#9733 &#9733';
+        }
+
+
+
+    ?>
+		<p id="rating" title="<?php echo $user_rating.'/'.$max_ratings;?>">
 			&#9733 &#9733 &#9733 &#9733 &#9734
 		</p>
 		<p id="joined">Member since: <?php echo $date ?></p><!-- http://www.alt-codes.net/star_alt_code.php -->
 
-		<p class="review">
+		<!--p class="review">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus eleifend orci eu pretium. Vestibulum efficitur vitae metus id lobortis. Aliquam vel fringilla nibh. Praesent ac tincidunt sapien. In a metus dolor. Vestibulum eu dictum metus. Praesent malesuada dui magna, eu iaculis velit lacinia et. Donec finibus ante id nisl placerat, vitae ultrices nunc convallis. Vivamus at risus mi. In in diam quis ipsum consectetur semper vitae quis risus.
-		</p>
+		</p-->
 
-		<p class="reviewer">
+    <p class="review">
+      <?php echo $reviewoutput['review_text'];  ?>
+    </p>
+
+    <p class="reviewer">
+      <a href="user.php?id="><?php echo $reviewoutput['reviewer'];  ?></a>
+    </p>
+
+		<!--p class="reviewer">
 			<a href="#"> - ponlyloverx67</a>
-		</p>
+		</p-->
 
 		<div id="void"></div>
     </div>
@@ -147,7 +189,7 @@ $_SESSION['e_msg'] = '';
                 $itemPosition = 0;
                 while ($row = $result->fetch_assoc()) {
                     if ($row['auctionid'] == $itemPosition) {
-                        //we do nothing
+                      //we do nothing
                     } else {
                         $itemPosition = $row['auctionid'];
                         $resultTwo = $conn->query('SELECT * FROM itemlist WHERE id = '.$row['auctionid'].'');
@@ -167,12 +209,14 @@ $_SESSION['e_msg'] = '';
                     					</li>';
                             }
                         } else {
-                            echo '<center>Sorry no items were found in your search!</center>';
+                          echo '<center>Sorry no items were found in your search!</center>';
+
                         }
                     }
                 }
             } else {
-                echo '<center>Sorry no items were found in your search!</center>';
+              echo '<center>Sorry no items were found in your search!</center>';
+
             }
     ?>
   </ul>
@@ -182,7 +226,7 @@ $_SESSION['e_msg'] = '';
     $(document).ready(function(){
       $('.bxslider').bxSlider(
         {
-          minSlides: 0,
+          minSlides: 1,
           maxSlides: 10,
           slideWidth: 202,
           slideMargin: 10
@@ -253,7 +297,7 @@ $_SESSION['e_msg'] = '';
                             </li>';
                           }
           } else {
-              echo '<center>Sorry no items were found in your search!</center>';
+                  echo '<center>Sorry no items were found in your search!</center>';
           }
   ?>
 </ul>
