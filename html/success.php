@@ -18,7 +18,7 @@ if ($_SESSION['logged_in'] == true) {
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="../css/default.css">
 	<link rel="stylesheet" type="text/css" href="../css/list.css">
-	<!--meta http-equiv="Refresh" content="2; URL=../html/item.php?id=<?php echo $_GET["id"];?>"-->
+	<meta http-equiv="Refresh" content="2; URL=../html/item.php?id=<?php echo $_GET["id"];?>">
 </head>
 <body>
 
