@@ -30,6 +30,12 @@ $_SESSION['e_msg'] = '';
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="../css/default.css">
 	<link rel="stylesheet" type="text/css" href="../css/user.css">
+	<!-- jQuery library (served from Google) -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<!-- bxSlider Javascript file -->
+	<script src="../js/jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="../js/jquery.bxslider.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -163,38 +169,40 @@ $_SESSION['e_msg'] = '';
 	<div class="title">
         <h3>Other items by hatGuy</h3>
 	</div>
-
+	<script>
+    $(document).ready(function(){
+      $('.bxslider').bxSlider(
+        {
+          moveSlides: 1,
+          minSlides: 1,
+          maxSlides: 3,
+          slideWidth: 202,
+          slideMargin: 10
+        }
+      );
+    });
+  </script>
     <div class="content">
-		<div class="navBox">
-			<span class="navL">
-				<a width="50" height="50"></a>
-			</span>
+			<div id="sliderOfLove"  style="width: 626; margin: 0 auto 5 auto;">
+	      <ul class="bxslider">
+	    <?php
+	      $resultThree = $conn->query('SELECT * FROM itemlist WHERE ownerid = '.$userid.'');
+	      if ($resultThree->num_rows > 0) {
+	          // output data of each row
+	      while ($row = $resultThree->fetch_assoc()) {
 
-			<div class="boxen">
-				<img src="../images/mobo.png" height="200" width="200" class="round winning" id="lOne" />
-				<img src="../images/cpu.png" height="200" width="200" class="round" id="lTwo" />
-				<img src="../images/monitor.png" height="200" width="200" class="round losing" id="lThree" />
-
-				<br />
-
-				<span class="slideWin" id="sl1" onclick="window.location = '#';">
-					<h4 class="condition">Highest Bid</h4>
-					<a href="#lrm1"><h4 class="rm">Remove</h4></a>
-				</span>
-
-				<span class="slideBlank" id="sl2" onclick="window.location = '#';">
-				</span>
-
-				<span class="slideLose" id="sl3" onclick="window.location = '#';">
-					<h4 class="condition">Out Bid</h4>
-					<a href="#lrm3"><h4 class="rm">Remove</h4></a>
-				</span>
-			</div>
-
-			<span class="navR">
-				<a width="50" height="50"></a>
-			</span>
-		</div>
+	                            echo '<li>
+	                              <div class="boxen">
+	                                <a href=""><img src="../userimages/'.$row['img'].'" height="200" width="200" class="round" id="one" /></a>
+	                              </div>
+	                            </li>';
+	                          }
+	          } else {
+	                  echo '<center>Sorry no items were found in your search!</center>';
+	          }
+	  ?>
+	</ul>
+	</div>
 		<div id="void"></div>
     </div>
 
