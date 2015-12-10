@@ -88,10 +88,6 @@ $_SESSION['e_msg'] = '';
 
            <img class="round" src="<?php echo $userPicture; ?>" height="200" width="200" />
         </div>
-        <!--span id="listing">
-            <p>Your display name is: herpaderp</p>
-            <p>The email address on file is: herpaderp@gmail.com</p>
-        </span-->
 				<?php
 		        $reviews = true;
 		        $reviewdata = $conn->query('SELECT * FROM reviews WHERE seller='.$userID.' ORDER BY RAND() LIMIT 1');
@@ -193,7 +189,9 @@ $_SESSION['e_msg'] = '';
 
 	                            echo '<li>
 	                              <div class="boxen">
-	                                <a href=""><img src="../userimages/'.$row['img'].'" height="200" width="200" class="round" id="one" /></a>
+	                                <a href="#">
+																		<img src="../userimages/'.$row['img'].'" height="200" width="200" class="round" id="one" />
+																	</a>
 	                              </div>
 	                            </li>';
 	                          }
