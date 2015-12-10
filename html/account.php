@@ -198,7 +198,7 @@ $_SESSION['e_msg'] = '';
 	</div>
 
     <div class="content">
-      <div id="sliderOfLove">
+      <div id="sliderOfLove" style="width: 666; margin: 0 auto; background-color: #ddd;">
         <ul class="bxslider">
       <?php
             $result = $conn->query('SELECT * FROM bids WHERE bidderid = '.$userid.'');
@@ -244,8 +244,9 @@ $_SESSION['e_msg'] = '';
     $(document).ready(function(){
       $('.bxslider').bxSlider(
         {
+          moveSlides: 1,
           minSlides: 1,
-          maxSlides: 10,
+          maxSlides: 3,
           slideWidth: 202,
           slideMargin: 10
         }
