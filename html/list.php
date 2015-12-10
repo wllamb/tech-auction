@@ -82,7 +82,7 @@ switch ($cat) {
 			<span id="menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="shop.php">Shop</a>
+					<li><a href="#">Shop</a>
 						<ul>
 							<li><a href="list.php?cat=0">CPUs</a></li>
 							<li><a href="list.php?cat=1">Cooling</a></li>

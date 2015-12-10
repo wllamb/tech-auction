@@ -50,7 +50,7 @@ $_SESSION['e_msg'] = '';
 			<span id="menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="shop.php">Shop</a>
+					<li><a href="#">Shop</a>
 						<ul>
 							<li><a href="list.php?cat=0">CPUs</a></li>
 							<li><a href="list.php?cat=1">Cooling</a></li>
@@ -138,9 +138,6 @@ $_SESSION['e_msg'] = '';
 				</p>
 				<p id="joined">Member since: <?php echo $date ?></p><!-- http://www.alt-codes.net/star_alt_code.php -->
 
-				<!--p class="review">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus eleifend orci eu pretium. Vestibulum efficitur vitae metus id lobortis. Aliquam vel fringilla nibh. Praesent ac tincidunt sapien. In a metus dolor. Vestibulum eu dictum metus. Praesent malesuada dui magna, eu iaculis velit lacinia et. Donec finibus ante id nisl placerat, vitae ultrices nunc convallis. Vivamus at risus mi. In in diam quis ipsum consectetur semper vitae quis risus.
-				</p-->
 		    <?php
 		    if($reviews) {
 		      echo '
@@ -154,10 +151,6 @@ $_SESSION['e_msg'] = '';
 		      ';
 		    }
 		    ?>
-
-				<!--p class="reviewer">
-					<a href="#"> - ponlyloverx67</a>
-				</p-->
 
 				<div id="void"></div>
     </div>

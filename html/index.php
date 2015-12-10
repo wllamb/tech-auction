@@ -32,8 +32,6 @@ if ($_SESSION['logged_in'] == true) {
 	<link href="../js/jquery.bxslider.css" rel="stylesheet" />
 </head>
 
-    <!-- ALSO CHANGED; DEFAULT.CSS, INDEX.CSS -->
-
 <body>
 
 <div id="center" style="height: 100%;">
@@ -47,7 +45,7 @@ if ($_SESSION['logged_in'] == true) {
 			<span id="menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="shop.php">Shop</a>
+					<li><a href="#">Shop</a>
 						<ul>
 							<li><a href="list.php?cat=0">CPUs</a></li>
 							<li><a href="list.php?cat=1">Cooling</a></li>
@@ -93,10 +91,6 @@ if ($_SESSION['logged_in'] == true) {
 					<span class="flit">
 						<span class="featuredImg">
 							<a href="item.php?id='.$row['id'].'"><img src="../userimages/'.$row['img'].'" height="240" width="240" class="round" /></a>
-							<!--span class="slideWin" id="s1" onclick="window.location = \'item.php?id='.$row['id'].'\';">
-								<h4 class="condition">Highest Bidder</h4>
-								<a href="#rm"><h4 class="rm">Remove</h4></a>
-							</span-->
 						</span>
 						<span class="featured">
 							<h1><a href="item.php?id='.$row['id'].'">'.$row['title'].'</a></h1>
@@ -118,61 +112,6 @@ if ($_SESSION['logged_in'] == true) {
 				});
 			</script>
 		</div>
-
-
-        <!--div id="imageStack">
-            <a href="#"><img src="../images/mobo.png" height="240" width="240" class="round winning" id="left" /></a>
-            <a href="#"><img src="../images/cpu.png" height="256" width="256" class="round" id="front" /></a>
-            <a href="#"><img src="../images/monitor.png" height="240" width="240" class="round losing" id="right" /></a>
-        </div>
-		<div id="imageP">
-			<p>Welcome to Tech Auctions where you can buy and sell computer-related techology. Please take a moment to sign in or create an account to buy and sell, or feel free to search around as a guest.</p>
-		</div-->
-
-
-        <!--a href="#" onclick="document.getElementById('flit1').style.marginLeft='-1000';"><</a>
-
-        <a href="#" onclick="document.getElementById('flit1').style.marginLeft='0';">></a>
-        <div class="flit" id="flit1">
-            <div class="featuredImg">
-				<img src="../images/cpu.png" height="240" width="240" class="round" />
-			</div>
-			<span class="featured">
-				<h1>Yolo Swagger bums</h1>
-				<p>This item is dope af.  I like it.  If I didn't already have a better processor, I might have been tempted to pick one of these up.  But I have a better processor because I'm a boss.  Yummy!</p>
-			</span>
-        </div>
-
-        <div class="flit" id="flit2" style="background-color:red;">
-            <div class="featuredImg">
-				<img src="../images/cpu.png" height="240" width="240" class="round" />
-			</div>
-			<span class="featured">
-				<h1>Yolo Swagger bums</h1>
-				<p>This item is dope af.  I like it.  If I didn't already have a better processor, I might have been tempted to pick one of these up.  But I have a better processor because I'm a boss.  Yummy!</p>
-			</span>
-        </div-->
-
-		<!--
-		<span class="navL">
-			<a width="50" height="50"></a>
-		</span>
-		<span class="flit">
-            <span class="featuredImg">
-				<img src="../images/cpu.png" height="240" width="240" class="round winning" />
-				<span class="slideWin" id="s1" onclick="window.location = '#';">
-					<h4 class="condition">Highest Bidder</h4>
-					<a href="#rm"><h4 class="rm">Remove</h4></a>
-				</span>
-			</span>
-			<span class="featured">
-				<h1>Yolo Swagger bums</h1>
-				<p>This item is dope af.  I like it.  If I didn't already have a better processor, I might have been tempted to pick one of these up.  But I have a better processor because I'm a boss.  Yummy!</p>
-			</span>
-        </span>
-		<span class="navR">
-			<a width="50" height="50"></a>
-		</span> -->
 
 		<div id="void" style="margin-bottom:10;"></div>
 	</div>

@@ -127,31 +127,16 @@
 .slideWin
 {
 	background: rgba(0,144,0,.1);
-    
-    /*background: -webkit-linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%);
-    background: -o-linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%);
-    background: -moz-linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%);
-    background: linear-gradient(rgba(0,144,0,.3) 13%, rgba(0,144,0,.3) 13%, rgba(0,144,0,.1) 13%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.1) 87%, rgba(0,144,0,.3) 87%, rgba(0,144,0,.3) 100%);*/
 }
 
 .slideLose
 {
 	background: rgba(144,0,0,.1);
-    
-    /*background: -webkit-linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%);
-    background: -o-linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%);
-    background: -moz-linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%);
-    background: linear-gradient(rgba(144,0,0,.3) 13%, rgba(144,0,0,.3) 13%, rgba(144,0,0,.1) 13%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.1) 87%, rgba(144,0,0,.3) 87%, rgba(144,0,0,.3) 100%);*/
 }
 
 .slideList
 {
 	background: rgba(0,0,144,.1);
-    
-    /*background: -webkit-linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%);
-    background: -o-linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%);
-    background: -moz-linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%);
-    background: linear-gradient(rgba(0,0,144,.3) 13%, rgba(0,0,144,.3) 13%, rgba(0,0,144,.1) 13%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.1) 87%, rgba(0,0,144,.3) 87%, rgba(0,0,144,.3) 100%);*/
 }
 
 h4
@@ -226,20 +211,13 @@ h4
     cursor: pointer;
 }
 
-/*.slideWin + a, .slideLose + a, .slideList + a
-{
-    margin: 0;
-    background-color: aqua;
-    z-index: 999;
-}*/
-
 .slideWin + a h4, .slideLose + a h4, .slideList + a h4
 {
     -webkit-transition:all .2s ease;
 	transition:all .2s ease;
 	transition-delay: 0;
 	transition-timing-function: linear;
-    
+
     position: relative;
     top: -28;
     margin: 0 0 -18 0;
@@ -247,9 +225,9 @@ h4
     text-align: right;
     color: rgba(255, 255, 255, 0);
     z-index: 99;
-    
+
     cursor: pointer;
-    
+
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -260,7 +238,7 @@ h4
 	transition:all .1s ease;
 	transition-delay: 0;
 	transition-timing-function: linear;
-    
+
     color: rgba(255, 255, 255, 1);
 
     background-color: #900000;

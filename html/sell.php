@@ -25,8 +25,6 @@ $_SESSION['e_msg'] = '';
     <link rel="stylesheet" type="text/css" href="../css/sell.css">
 </head>
 
-    <!-- ALSO CHANGED; DEFAULT.CSS, INDEX.CSS -->
-
 <body>
 
 <div id="center" style="height: 100%;"">
@@ -40,7 +38,7 @@ $_SESSION['e_msg'] = '';
 			<span id="menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="shop.php">Shop</a>
+					<li><a href="#">Shop</a>
 						<ul>
 							<li><a href="list.php?cat=0">CPUs</a></li>
 							<li><a href="list.php?cat=1">Cooling</a></li>

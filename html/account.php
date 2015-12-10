@@ -51,7 +51,7 @@ $_SESSION['e_msg'] = '';
 			<span id="menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="shop.php">Shop</a>
+					<li><a href="#">Shop</a>
 						<ul>
 							<li><a href="list.php?cat=0">CPUs</a></li>
 							<li><a href="list.php?cat=1">Cooling</a></li>
@@ -88,10 +88,6 @@ $_SESSION['e_msg'] = '';
         <div id="listingImg">
            <img class="round" src="<?php echo $user->picture ?>" height="200" width="200" />
         </div>
-        <!--span id="listing">
-            <p>Your display name is: herpaderp</p>
-            <p>The email address on file is: herpaderp@gmail.com</p>
-        </span-->
     <?php
         $reviews = true;
         $reviewdata = $conn->query('SELECT * FROM reviews WHERE seller='.$userid.' ORDER BY RAND() LIMIT 1');
@@ -142,9 +138,6 @@ $_SESSION['e_msg'] = '';
 		</p>
 		<p id="joined">Member since: <?php echo $date ?></p><!-- http://www.alt-codes.net/star_alt_code.php -->
 
-		<!--p class="review">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur cursus eleifend orci eu pretium. Vestibulum efficitur vitae metus id lobortis. Aliquam vel fringilla nibh. Praesent ac tincidunt sapien. In a metus dolor. Vestibulum eu dictum metus. Praesent malesuada dui magna, eu iaculis velit lacinia et. Donec finibus ante id nisl placerat, vitae ultrices nunc convallis. Vivamus at risus mi. In in diam quis ipsum consectetur semper vitae quis risus.
-		</p-->
     <?php
     if($reviews) {
       echo '
@@ -158,10 +151,6 @@ $_SESSION['e_msg'] = '';
       ';
     }
     ?>
-
-		<!--p class="reviewer">
-			<a href="#"> - ponlyloverx67</a>
-		</p-->
 
 		<div id="void"></div>
     </div>
@@ -198,11 +187,11 @@ $_SESSION['e_msg'] = '';
       <div id="sliderOfLove" style="width: 626; margin: 0 auto 5 auto;">
         <ul class="bxslider">
       <?php
-            
+
             $slide = 'slideLose';
             $class = 'losing';
             $conditionText = 'Out Bid';
-            
+
             $result = $conn->query('SELECT * FROM bids WHERE bidderid = '.$userid.'');
             if ($result->num_rows > 0) {
                 // output data of each row
@@ -215,7 +204,7 @@ $_SESSION['e_msg'] = '';
                         $resultTwo = $conn->query('SELECT * FROM itemlist WHERE id = '.$row['auctionid'].'');
                         if ($resultTwo->num_rows >= 0) {
                             while ($rowTwo = $resultTwo->fetch_assoc()) {
-                            
+
                             if($_SESSION['user_id'] == $rowTwo['bidderid'])
                             {
                                 $slide = 'slideWin';
@@ -228,7 +217,7 @@ $_SESSION['e_msg'] = '';
                                 $class = 'losing';
                                 $conditionText = 'Out Bid';
                             }
-                            
+
                               echo '<li>
                                 <div class="boxen">
                                   <img src="../userimages/'.$rowTwo['img'].'" height="200" width="200" class="round '.$class.'" id="one" />

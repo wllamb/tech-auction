@@ -46,7 +46,7 @@ $AMPM = date('a', $endDate);
 			<span id="menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="shop.php">Shop</a>
+					<li><a href="#">Shop</a>
 						<ul>
 							<li><a href="list.php?cat=0">CPUs</a></li>
 							<li><a href="list.php?cat=1">Cooling</a></li>
@@ -102,7 +102,7 @@ $AMPM = date('a', $endDate);
 			<h1>'.$item['title'].'</h1>
 			<br>
 			<div id="listingImg">
-				<img src="../userimages/'.$item['img'].'" height="256" width="256" class="round" id="jsBitches"/>
+				<img src="../userimages/'.$item['img'].'" height="256" width="256" class="round" />
 				<!--span class="slideWin" id="s1" onclick="window.location = \'#\';">
 					<h4 class="condition">Winning</h4>
 					<a href="#rm"><h4 class="rm">Remove</h4></a>
