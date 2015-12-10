@@ -217,10 +217,11 @@ $_SESSION['e_msg'] = '';
                                 <div class="boxen">
                                   <img src="../userimages/'.$rowTwo['img'].'" height="200" width="200" class="round winning" id="one" />
                                   <br />
-                                  <span class="slideWin" id="s1" onclick="confirmHandle('.$rowTwo['id'].', 0)">
+                                  <span class="slideWin" id="s1" onclick="confirmHandle('.$rowTwo['id'].', 0, 0)">
                                     <h4 class="condition">Highest Bidder</h4>
-                                    <a onclick="confirmHandle('.$rowTwo['id'].', 1)"><h4 class="rm">Remove</h4></a>
+                                    <a><h4 class="rm">Remove</h4></a>
                                   </span>
+                                    <a onclick="confirmHandle('.$rowTwo['id'].', 1, 0)" onmouseover="document.getElementByClassName("slideWin").css("opacity", "1")"><h4>Remove</h4></a>
 
                                 </div>
                     					</li>';
@@ -240,21 +241,21 @@ $_SESSION['e_msg'] = '';
 </div>
 
   <script>
-    function confirmHandle(x, rm)
+    function confirmHandle(x, rm, list)
     {
       var urlRm = "remove.php?id=";
       var url = "item.php?id=";
 
       if(!rm)
       {
-        window.location.href(url.concat(x));
+        window.location.href = url.concat(x);
       }
       else
       {
         var r = confirm("Are you sure you want to remove this item?");
         if (r == true)
         {
-          window.location.href(urlRm.concat(x));
+          window.location.href = urlRm.concat(x);
         }
         else
         {
@@ -278,39 +279,7 @@ $_SESSION['e_msg'] = '';
       );
     });
   </script>
-    <!--
-		<div class="navBox">
-			<span class="navL">
-				<a width="50" height="50"></a>
-			</span>
 
-			<div class="boxen">
-				<img src="../images/mobo.png" height="200" width="200" class="round winning" id="one" />
-				<img src="../images/cpu.png" height="200" width="200" class="round losing" id="two" />
-				<img src="../images/monitor.png" height="200" width="200" class="round losing" id="three" />
-
-				<br />
-
-				<span class="slideWin" id="s1" onclick="window.location = '#';">
-					<h4 class="condition">Highest Bidder</h4>
-					<a href="#rm"><h4 class="rm">Remove</h4></a>
-				</span>
-
-				<span class="slideLose" id="s2" onclick="window.location = '#';">
-					<h4 class="condition">Out Bid</h4>
-					<a href="#rm"><h4 class="rm">Remove</h4></a>
-				</span>
-
-				<span class="slideLose" id="s3" onclick="window.location = '#yolo';">
-					<h4 class="condition">Out Bid</h4>
-					<h4 class="rm" onclick="confirm('Are you sure you want to remove this item?')">Remove</h4>
-				</span>
-			</div>
-
-			<span class="navR">
-				<a width="50" height="50"></a>
-			</span>
-		</div>-->
         <div id="void"></div>
     </div>
 
@@ -332,10 +301,11 @@ $_SESSION['e_msg'] = '';
                                 <img src="../userimages/'.$row['img'].'" height="200" width="200" class="round listing" id="one" />
 
                                 <br />
-                                <span class="slideList" id="s1" onclick="window.location = \'#\';">
+                                <span class="slideList" id="s1" onclick="confirmHandle('.$row['id'].', 0, 1)">
                                   <h4 class="condition">Listing</h4>
-                                  <a href="#rm"><h4 class="rm">Remove</h4></a>
+                                  <a><h4 class="rm">Remove</h4></a>
                                 </span>
+                                <a onclick="confirmHandle('.$row['id'].', 1, 1)" onmouseover="document.getElementByClassName("slideWin").css("opacity", "1")"><h4>Remove</h4></a>
 
                               </div>
                             </li>';
