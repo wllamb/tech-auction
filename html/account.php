@@ -198,7 +198,7 @@ $_SESSION['e_msg'] = '';
 	</div>
 
     <div class="content">
-      <div id="sliderOfLove" style="width: 666; margin: 0 auto; background-color: #ddd;">
+      <div id="sliderOfLove" style="width: 626; margin: 0 auto 5 auto;">
         <ul class="bxslider">
       <?php
             $result = $conn->query('SELECT * FROM bids WHERE bidderid = '.$userid.'');
@@ -294,7 +294,7 @@ $_SESSION['e_msg'] = '';
 	</div>
 
   <div class="content">
-    <div id="sliderOfLove">
+    <div id="sliderOfLove"  style="width: 626; margin: 0 auto 5 auto;">
       <ul class="bxslider">
     <?php
       $resultThree = $conn->query('SELECT * FROM itemlist WHERE ownerid = '.$userid.'');

@@ -29,7 +29,7 @@ $_SESSION['e_msg'] = '';
 
 <body>
 
-<div id="center">
+<div id="center" style="height: 100%;"">
 	<div id="header">
 		<div id="headCenter">
 			<span id="image">
@@ -73,7 +73,7 @@ $_SESSION['e_msg'] = '';
 	<div class="title">
 		<h3>List an Item</h3>
 	</div>
-	<form class="content" action="listItem.php" method="post" enctype="multipart/form-data">
+	<form class="content" action="listItem.php" method="post" enctype="multipart/form-data"">
 		<div class="item">
 			<div class="left">
 				<label for="category">
@@ -158,7 +158,7 @@ $_SESSION['e_msg'] = '';
 				</label>
 			</div>
 			<div class="right" id="tall">
-				<textarea id="description" name="description" rows="4" cols="40">Item Description</textarea>
+				<textarea id="description" name="description" rows="4" cols="40" required></textarea>
 			</div>
 		</div>
 
@@ -167,7 +167,7 @@ $_SESSION['e_msg'] = '';
 			</div>
 			<div class="right">
 				<input type="submit" value="List Item">
-				<input type="button" value="Clear">
+				<input type="reset" value="Clear">
 			</div>
 		</div>
 
