@@ -194,14 +194,14 @@ $_SESSION['e_msg'] = '';
 
             $result = $conn->query('SELECT * FROM bids WHERE bidderid = '.$userid.'');
             if ($result->num_rows > 0) {
-                // output data of each row
+                echo '<center>Sorry no items were found in your search!</center>';
                 $itemPosition = 0;
                 while ($row = $result->fetch_assoc()) {
                     if ($row['auctionid'] == $itemPosition) {
                       //we do nothing
                     } else {
                         $itemPosition = $row['auctionid'];
-                        $resultTwo = $conn->query('SELECT * FROM itemlist WHERE id = '.$row['auctionid'].'');
+                        $resultTwo = $conn->query('SELECT * FROM itemlist WHERE hasended=0 AND id = '.$row['auctionid'].' ');
                         if ($resultTwo->num_rows >= 0) {
                             while ($rowTwo = $resultTwo->fetch_assoc()) {
 
@@ -296,7 +296,7 @@ $_SESSION['e_msg'] = '';
     <div id="sliderOfLove"  style="width: 626; margin: 0 auto 5 auto;">
       <ul class="bxslider">
     <?php
-      $resultThree = $conn->query('SELECT * FROM itemlist WHERE ownerid = '.$userid.'');
+      $resultThree = $conn->query('SELECT * FROM itemlist WHERE hasended=0 AND ownerid = '.$userid.'');
       if ($resultThree->num_rows > 0) {
           // output data of each row
       while ($row = $resultThree->fetch_assoc()) {

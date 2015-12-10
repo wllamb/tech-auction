@@ -91,7 +91,7 @@ if ($_SESSION['logged_in'] == true) {
                                   <span id="listing">
                                     <a href="item.php?id='.$rowTwo['id'].'" id="titleAuction">'.$rowTwo['title'].'</a>
                                     <a href="item.php?id='.$rowTwo['id'].'" id="price">$'.$rowTwo['price'].'</a>
-                                    <h4><a href="#">Seller: '.$rowTwo['ownername'].'</a></h4>
+                                    <h4><a href="user.php?id='.$rowTwo['ownerid'].'">Seller: '.$rowTwo['ownername'].'</a></h4>
                                     <a href="item.php?id='.$rowTwo['id'].'"><p>'.$rowTwo['description'].'</p></a>
                                   </span>
                                   <div id="void"></div>

@@ -5,6 +5,7 @@ if ($_SESSION['logged_in'] == true) {
 		$logoutText = 'Logout';
 		$dynamicURL = LOGOUT_URL;
 		$userid = $_SESSION['user_id'];
+		header("location:account.php");
 } else {
 		$dynamicURL = 'login.php';
 		$logoutText = 'Login';

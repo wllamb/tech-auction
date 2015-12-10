@@ -39,7 +39,7 @@ $_SESSION['e_msg'] = '';
 </head>
 <body>
 
-<div id="center">
+<div id="center" style="height:100%">
 	<div id="header">
 		<div id="headCenter">
 			<span id="image">
@@ -156,7 +156,7 @@ $_SESSION['e_msg'] = '';
     </div>
 
 	<div class="title">
-        <h3><?php echo 'Other items by '.$usersName; ?></h3>
+        <h3><?php echo 'Items by '.$usersName; ?></h3>
 	</div>
 	<script>
     $(document).ready(function(){
@@ -175,13 +175,13 @@ $_SESSION['e_msg'] = '';
 			<div id="sliderOfLove"  style="width: 626; margin: 0 auto 5 auto;">
 	      <ul class="bxslider">
 	    <?php
-	      $resultThree = $conn->query('SELECT * FROM itemlist WHERE ownerid = '.$userID.'');
+	      $resultThree = $conn->query('SELECT * FROM itemlist WHERE hasended=0 AND ownerid = '.$userID.'');
 	      if ($resultThree->num_rows > 0) {
 	          // output data of each row
 	      while ($row = $resultThree->fetch_assoc()) {
 
 	                            echo '<li>
-	                              <div class="boxen">
+	                              <div class="boxen" style="margin-bottom: 8;">
 	                                <a href="item.php?id='.$row['id'].'">
 																		<img src="../userimages/'.$row['img'].'" height="200" width="200" class="round" id="one" />
 																	</a>
