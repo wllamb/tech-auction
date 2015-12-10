@@ -110,23 +110,23 @@ $_SESSION['e_msg'] = '';
           $reviews = false;
         }
 
-        if($stars === 0)
+        if($stars < 10)
         {
           $startext = '&#9734 &#9734 &#9734 &#9734 &#9734';
         }
-        else if(($stars >= 1) && ($stars < 20))
+        else if(($stars >= 10) && ($stars < 30))
         {
           $startext = '&#9733 &#9734 &#9734 &#9734 &#9734';
         }
-        else if(($stars >= 20) && ($stars < 40))
+        else if(($stars >= 30) && ($stars < 50))
         {
           $startext = '&#9733 &#9733 &#9734 &#9734 &#9734';
         }
-        else if(($stars >= 40) && ($stars < 60))
+        else if(($stars >= 50) && ($stars < 70))
         {
           $startext = '&#9733 &#9733 &#9733 &#9734 &#9734';
         }
-        else if(($stars >= 60) && ($stars < 80))
+        else if(($stars >= 70) && ($stars < 90))
         {
           $startext = '&#9733 &#9733 &#9733 &#9733 &#9734';
         }
